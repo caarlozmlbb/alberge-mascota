@@ -12,6 +12,7 @@
                 <a href="#">Portafolio</a>
                 <a href="#">Servicios</a>
                 <a href="{{ route('admin') }}">Administrador</a>
+                <a href="#">Acceder</a>
             </div>
 
             
@@ -19,53 +20,15 @@
         <section class="textos-header">
             <h1 id="header-text"></h1>
             <h2 id="header-text-2">Nombre del alberge | otros</h2>
+            <a href="" class="btn btn-4">ACCEDER
+                <i class="fa-solid fa-paw"></i>
+            </a>
+            
         </section>
           
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-          <script>
-            $(document).ready(function() {
-              var textos = [
-                "Encuentra un amigo fiel y cambia vidas: ¡adopta!",
-                "Descubre la compañía leal y cambia vidas: ¡adopta tu mascota ideal!",
-                "Descubrien quien es tu mejor Amigo :)"
-              ];
-              var index = 0;
-              var currentText = '';
-              var isDeleting = false;
-          
-              function typeEffect() {
-                var texto = textos[index];
-          
-                if (isDeleting) {
-                  currentText = currentText.substring(0, currentText.length - 1);
-                } else {
-                  currentText = texto.substring(0, currentText.length + 1);
-                }
-          
-                $('#header-text').text(currentText);
-          
-                var typeSpeed = 50;
-                if (isDeleting) {
-                  typeSpeed /= 2;
-                }
-          
-                if (!isDeleting && currentText === texto) {
-                  isDeleting = true;
-                  setTimeout(typeEffect, 2000);
-                } else if (isDeleting && currentText === '') {
-                  isDeleting = false;
-                  index = (index + 1) % textos.length;
-                  setTimeout(typeEffect, 500);
-                } else {
-                  setTimeout(typeEffect, typeSpeed);
-                }
-              }
-          
-              typeEffect();
-            });
-          </script>
-        
 
+        
         <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L500.00,149.60 L0.00,149.60 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
     <main>
@@ -218,6 +181,46 @@
             </div>
         </section>
     </main>
+    <div class="carrusel">
+        <div class="carrusel-items">
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+            <div class="carrusel-item">
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="contenedor-footer">
             <div class="content-foo">
