@@ -4,18 +4,27 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="images/p.png" alt="Logo">
+                <img src="images/logo-alberge.png" alt="Logo">
             </div>
             <div class="nav-links">
                 <a href="#">Inicio</a>
                 <a href="#">Acerca de</a>
                 <a href="#">Portafolio</a>
                 <a href="#">Servicios</a>
-                <a href="{{ route('admin') }}">Administrador</a>
-                <a href="#">Acceder</a>
-            </div>
+                <a href="">Administrador</a>
+                @if (Route::has('login'))
 
-            
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                    @endif
+                @endauth
+        @endif
+            </div>
         </nav>
         <section class="textos-header">
             <h1 id="header-text"></h1>
@@ -25,10 +34,7 @@
             </a>
             
         </section>
-          
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        
         <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L500.00,149.60 L0.00,149.60 Z" style="stroke: none; fill: #fff;"></path></svg></div>
     </header>
     <main>
@@ -181,6 +187,16 @@
             </div>
         </section>
     </main>
+
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.9584574239734!2d-68.16262422550749!3d-16.528194784219785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915edf6e1a71979b%3A0xa877a378175598c5!2sAv.%20C%C3%ADvica%201420%2C%20La%20Paz!5e0!3m2!1ses!2sbo!4v1716472233291!5m2!1ses!2sbo" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
     <div class="carrusel">
         <div class="carrusel-items">
             <div class="carrusel-item">
@@ -221,6 +237,7 @@
             </div>
         </div>
     </div>
+    
     <footer>
         <div class="contenedor-footer">
             <div class="content-foo">
@@ -238,5 +255,6 @@
         </div>
         <h2 class="titulo-final">&copy; Carlos Mamani corasdas | sdsdsad</h2>
     </footer>
+
 
 @endsection

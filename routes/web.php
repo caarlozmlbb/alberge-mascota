@@ -1,12 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MascotasController;
-use App\Http\Controllers\ImageController;
-use App\Http\Macota;
 
 /*
-
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -18,29 +15,17 @@ use App\Http\Macota;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-route::resource('mascota',MascotasController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');
-
-
-Route::get('/admin', function () {
-    return view('admin');
-})->name('admin');
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
-
-/*Eliminar el IMAGEN*/
-Route::get('/delete-image/{imageName}', function ($imageName) {
-    // Eliminar la imagen del directorio public/images
-    $imagePath = public_path('images/' . $imageName);
-    if (File::exists($imagePath)) {
-        File::delete($imagePath);
-    }
-    // Redirigir de vuelta a la página que muestra las imágenes cargadas
-    return redirect()->back()->with('success', 'Imagen eliminada correctamente');
-})->name('delete.image'); 
+require __DIR__.'/auth.php';
