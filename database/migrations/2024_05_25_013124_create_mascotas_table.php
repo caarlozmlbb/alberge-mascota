@@ -15,11 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->integer('edad');
-            $table->enum('genero',['M','F'])->nullable();
-            $table->string('raza');
-            $table->text('estado_salud');
-            $table->unsignedBigInteger('id_administrador');
-            $table->foreign('id_administrador')->references('id')->on('administradores')->onDelete('cascade');
+            $table->enum('genero', ['Macho', 'Hembra'])->nullable();
+            $table->enum('raza', ['Criollo', 'Comun'])->nullable(); // Aquí se quitó la coma extra
+            $table->enum('estado', ['bueno', 'regular', 'malo'])->nullable();
             $table->timestamps();
         });
     }

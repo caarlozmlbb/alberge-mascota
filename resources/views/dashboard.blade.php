@@ -7,7 +7,9 @@
 @stop
 
 @section('content')
-    <p>Nuestras Mascotas.</p>
+    <p>Nuestras Mascotas:</p>
+    @include('mascota.index')
+    
 @stop
 
 @section('css')
