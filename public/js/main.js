@@ -1,25 +1,21 @@
-const carrusel = document.querySelector(".carrusel-items");
 
-if (carrusel) {
-  let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
-  let intervalo = null;
-  let step = 1; // Usa un valor pequeño para un movimiento suave
+document.addEventListener("DOMContentLoaded", function() {
+    const carruselItems = document.querySelector('.carrusel-items');
+    const cards = Array.from(carruselItems.children);
+    const totalCards = cards.length;
 
-  const start = () => {
-    intervalo = setInterval(function () {
-      carrusel.scrollLeft += step;
+    // Clona las tarjetas para crear un efecto continuo
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        carruselItems.appendChild(clone);
+    });
 
-      if (carrusel.scrollLeft === maxScrollLeft) {
-        step = -step; // Cambiar la dirección del desplazamiento
-      } else if (carrusel.scrollLeft === 0) {
-        step = -step; // Cambiar la dirección del desplazamiento
-      }
-    }, 10); // Ajusta este valor para controlar la velocidad del carrusel
-  };
+    // Ajusta la animación para que se repita correctamente
+    const clonedCards = document.querySelectorAll('.carrusel-item');
+    const totalWidth = totalCards * 250; // 250px es el ancho de cada tarjeta
+    const animationDuration = totalCards * 5; // Ajusta la duración de la animación según el número de tarjetas
 
-  const stop = () => {
-    clearInterval(intervalo);
-  };
+    carruselItems.style.width = `${totalWidth * 2}px`; // Ajusta el ancho del contenedor
+    carruselItems.style.animation = `scroll ${animationDuration}s linear infinite`;
+});
 
-  start(); // Iniciar el carrusel automáticamente
-}

@@ -43,11 +43,11 @@ header {
     height: 9%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
   }
-  
+
   .nav-links {
     display: flex;
   }
-  
+
   .nav-links > a {
     color: #7f7d7d;
     font-weight: 300;
@@ -55,13 +55,13 @@ header {
     margin-right: 20px;
     transition: color 0.3s ease, transform 0.3s ease; /* Agregamos la transición para transform */
   }
-  
+
   .nav-links > a:hover {
     text-decoration: underline;
     color: #030202;
     transform: translateY(-3px); /* Elevamos el elemento 3px hacia arriba */
   }
-  
+
   nav > a {
     color: #7f7d7d;
     font-weight: 300;
@@ -70,7 +70,7 @@ header {
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease; /* Agregamos la transición para transform */
   }
-  
+
   nav > a::before {
     content: "";
     position: absolute;
@@ -81,17 +81,17 @@ header {
     background-color: transparent;
     transition: background-color 0.3s ease;
   }
-  
+
   nav > a:hover::before {
     background-color: #f8f8f8;
   }
-  
+
   nav > a:hover {
     color: #f8f8f8;
     transform: translateY(-3px); /* Elevamos el elemento 3px hacia arriba */
   }
 
-  
+
 .logo {
     margin-right: auto; /* Empuja el logo hacia el extremo derecho */
     position: relative;
@@ -142,9 +142,9 @@ header {
   }
 }
 /**********************************************/
-  
 
-  
+
+
 
 header .textos-header{
     display: flex;
@@ -166,48 +166,10 @@ header .textos-header{
     font-weight: 300;
     color: #fff;
 }
-
 .wave{
     position: absolute;
     bottom: 0;
     width: 100%;
-}
-
-.contenedor-sobre-nosotros{
-    display: flex;
-    position: relative;
-    justify-content: space-evenly;
-    top: -20px;
-}
-
-.imagen-about-us{
-    width: 48%;
-}
-.sobre-nosotros .contenido-textos{
-    width: 48%;
-}
-
-.contenido-textos h3{
-    margin-bottom: 15px;
-}
-
-.contenido-textos h3 span{
-    background: #4d0686;
-    color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    padding: 2px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    margin-right: 5px;
-}
-
-.contenido-textos p{
-    padding: 0px 0px 30px 15px;
-    font-weight: 300;
-    text-align: justify;
 }
 
 /*Galeria*/
@@ -215,7 +177,7 @@ header .textos-header{
 .portafolio {
     position: relative; /* Esto permitirá que la imagen de fondo se coloque debajo del contenido */
   }
-  
+
   .portafolio::before {
     content: ""; /* Esto creará un pseudo-elemento */
     position: absolute;
@@ -396,7 +358,7 @@ footer{
     font-weight: bold;
     transition: background-color 0.3s ease;
   }
-  
+
   .btn-adoptar:hover {
     background-color: #ff4d4d;
   }
@@ -420,7 +382,7 @@ footer{
 }
 
 .card .description{
-    background: white;
+    background: #fff;
     margin-top: -10px;
     padding: 20px;
     border-radius: 0px 0px 20px 20px;
@@ -442,15 +404,18 @@ footer{
     bottom: -40px;
 }
 
-.card:nth-of-type(1) .img__back{
+.card .img__back {
     background-image: url(../images/bg1.jpg);
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    background-size: cover;
+    border-radius: 20px;
+    transition: all 300ms;
 }
-.card:nth-of-type(2) .img__back{
-    background-image: url(../images/bg1.jpg);
-}
-.card:nth-of-type(3) .img__back{
-    background-image: url(../images/bg1.jpg);
-}
+
 
 .card{
     width: 300px;
@@ -495,3 +460,39 @@ footer{
     border-radius: 20px;
     transition: all 300ms;
 }
+/*CARRUCEL DE TYMIS*/
+/* Efecto de carrusel continuo */
+.about-services {
+    overflow: hidden;
+    background-color: #f7f7f7;
+    padding: 20px 0; /* Reduce el padding superior e inferior */
+}
+
+.contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 36px;
+    margin-bottom: 0px; /* Reduce el margen inferior */
+}
+
+.servicio-cont {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Ajusta para moverse solo una vez el ancho del contenedor */
+    }
+}
+

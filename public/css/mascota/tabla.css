@@ -1,0 +1,106 @@
+ /* Contenedor principal */
+ .container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Título */
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+/* Botón Agregar Mascota */
+.header .btn-primary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.header .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Contenedor de la tabla con scroll */
+.table-container {
+    max-height: 600px; /* Ajusta esto según tus necesidades */
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+/* Estilos de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0; /* Ajustado para evitar margen en la tabla dentro del contenedor */
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+/* Botones de acciones */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
