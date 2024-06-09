@@ -50,75 +50,21 @@
             <div class="contenedor">
                 <h2 class="titulo">Quieres Adoptar una mascota?</h2>
                 <div class="servicio-cont">
-                    <div class="card">
-                        <div class="cover">
-                            <img src="{{ asset('images/p.png') }}" alt="">
-                            <div class="img__back"></div>
+                    @foreach ($mascotas as $mascota)
+                        <div class="card">
+                            <div class="cover">
+                                <img src="{{ asset('images/fotomascotas/' . $mascota->rutafoto) }}">
+                                <div class="img__back"></div>
+                            </div>
+                            <div class="description">
+                                <h2>Perros: {{ $mascota->nombre }}</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
+                                <input type="button" value="Leer Más" class="btn-descripcion">
+                            </div>
                         </div>
-                        <div class="description">
-                            <h2>Perros</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
-                            <input type="button" value="Leer Más">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cover">
-                            <img src="{{ asset('images/p4.png') }}" alt="">
-                            <div class="img__back"></div>
-                        </div>
-                        <div class="description">
-                            <h2>Gatos</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
-                            <input type="button" value="Leer Más">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cover">
-                            <img src="{{ asset('images/p5.png') }}" alt="">
-                            <div class="img__back"></div>
-                        </div>
-                        <div class="description">
-                            <h2>Otros</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
-                            <input type="button" value="Leer Más">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cover">
-                            <img src="{{ asset('images/p.png') }}" alt="">
-                            <div class="img__back"></div>
-                        </div>
-                        <div class="description">
-                            <h2>Perros</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
-                            <input type="button" value="Leer Más">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cover">
-                            <img src="{{ asset('images/p4.png') }}" alt="">
-                            <div class="img__back"></div>
-                        </div>
-                        <div class="description">
-                            <h2>Gatos</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
-                            <input type="button" value="Leer Más">
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="cover">
-                            <img src="{{ asset('images/p5.png') }}" alt="">
-                            <div class="img__back"></div>
-                        </div>
-                        <div class="description">
-                            <h2>Otros</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, laboriosam.</p>
-                            <input type="button" value="Leer Más">
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-
             <script>
                 document.addEventListener("DOMContentLoaded", function() {
                     const servicioCont = document.querySelector('.servicio-cont');
@@ -131,7 +77,6 @@
                     });
                 });
             </script>
-
         </section>
         <section>
             <section class="portafolio">

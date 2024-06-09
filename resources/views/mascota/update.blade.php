@@ -8,97 +8,6 @@
 
 @section('content')
 <style>
-    .form-container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 600px;
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    .form-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .form-label {
-        width: 30%;
-        text-align: right;
-        margin-right: 10px;
-        font-weight: bold;
-    }
-
-    .form-control {
-        width: 65%;
-        padding: 5px 0px 10px 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    .form-control:focus {
-        border-color: #007bff;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-        outline: none;
-    }
-
-    .form-actions {
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .btn-submit {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
-
-    .btn-submit:hover {
-        background-color: #0056b3;
-    }
-
-    .preview-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    .preview-box {
-        width: 150px;
-        height: 150px;
-        border: 2px dashed #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        background-color: #fff;
-    }
-
-    .preview-box img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-
-    .preview-box span {
-        color: #ccc;
-        font-size: 14px;
-        position: absolute;
-    }
 </style>
 </head>
 <body>
@@ -172,6 +81,7 @@
 @stop
 
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/mascota/update.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 @stop
 

@@ -58,7 +58,6 @@
                 @endforeach
             </tbody>
         </table>
-
     </div>
 </div>
 <style>
@@ -80,7 +79,6 @@
 <link rel="stylesheet" href="{{ asset('css/mascota/tabla.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 @stop
-
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @stop

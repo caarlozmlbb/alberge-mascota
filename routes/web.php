@@ -16,9 +16,12 @@ use App\Http\Controllers\ImageController;
 |
 */
 
+use App\Models\Mascota;
+
 Route::get('/', function () {
-    return view('index');
-})->name('index');;
+    $mascotas = Mascota::all(); // Obtener todas las mascotas desde la base de datos
+    return view('index', ['mascotas' => $mascotas]);
+})->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
