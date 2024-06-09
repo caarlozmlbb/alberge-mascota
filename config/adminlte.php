@@ -334,6 +334,16 @@ return [
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
+            'text' => 'Tabla Maria',
+            'route' => 'mascotas.index',
+            'icon' => 'fas fa-fw fa-paw',
+        ],
+        [
+            'text' => 'Tabla Sadam',
+            'route' => 'mascotas.index',
+            'icon' => 'fas fa-fw fa-paw',
+        ],
+        [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
