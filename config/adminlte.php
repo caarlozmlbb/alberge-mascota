@@ -335,7 +335,7 @@ return [
         ],
         [
             'text' => 'Tabla Maria',
-            'route' => 'mascotas.index',
+            'route' => 'eventos.index',
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
