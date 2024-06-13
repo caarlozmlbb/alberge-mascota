@@ -339,8 +339,8 @@ return [
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
-            'text' => 'Tabla Sadam',
-            'route' => 'mascotas.index',
+            'text' => 'Tabla Usuarios',
+            'route' => 'usuarios.index',
             'icon' => 'fas fa-fw fa-paw',
         ],
         [

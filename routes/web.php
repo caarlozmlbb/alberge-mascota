@@ -5,7 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ImageController;
-
+use App\Http\Controllers\UsuariosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,7 +39,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 Route::resource('mascotas', MascotaController::class);
 Route::resource('eventos', EventoController::class);
-
+//ruta para llamar al usuario
+Route::resource('usuarios', UsuariosController::class);
 
 
 Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');
