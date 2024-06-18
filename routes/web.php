@@ -19,6 +19,26 @@ use App\Http\Controllers\UsuariosController;
 
 use App\Models\Mascota;
 
+Route::get('/index', function(){
+    return view('index');
+})->name('index');
+
+Route::get('/como', function(){
+    return view('como');
+})->name('como');
+
+Route::get('/donaciones', function(){
+    return view('donaciones');
+})->name('donaciones');
+
+Route::get('/blog', function(){
+    return view('blog');
+})->name('blog');
+
+Route::get('/contacto', function(){
+    return view('contacto');
+})->name('contacto');
+
 Route::get('/', function () {
     $mascotas = Mascota::all(); // Obtener todas las mascotas desde la base de datos
     return view('index', ['mascotas' => $mascotas]);

@@ -1,50 +1,17 @@
 @extends('layouts.base')
-
 @section('contenido')
-
     <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo-alberge.png" alt="Logo">
-            </div>
-            <div class="nav-links">
-                <a href="#">Inicio</a>
-                <a href="#">Acerca de</a>
-                <a href="#">Portafolio</a>
-                <a href="#">Servicios</a>
-                <a href="">Administrador</a>
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ url('/dashboard') }}"
-                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}"
-                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                            in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                @endif
-            </div>
-        </nav>
+        @include('cabecera')
         <section class="textos-header">
             <h1 id="header-text"></h1>
-            <h2 id="header-text-2">Nombre del alberge | otros</h2>
+            <h2 id="header-text-2">Nombre del albergue | Otros</h2>
             <a href="{{ route('login') }}" class="btn btn-4">ACCEDER
                 <i class="fa-solid fa-paw"></i>
             </a>
-
         </section>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
-                <path d="M0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L500.00,149.60 L0.00,149.60 Z"
-                    style="stroke: none; fill: #f2f2f2;"></path>
-            </svg></div>
+        </nav>
     </header>
+
     <main>
         <section class="about-services">
             <div class="contenedor">
@@ -216,22 +183,6 @@
     </div>
 
     <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>Phone</h4>
-                <p>68166901</p>
-            </div>
-            <div class="content-foo">
-                <h4>Email</h4>
-                <p>68166901</p>
-            </div>
-            <div class="content-foo">
-                <h4>Location</h4>
-                <p>68166901</p>
-            </div>
-        </div>
-        <h2 class="titulo-final">&copy; Carlos Mamani corasdas | sdsdsad</h2>
+        @include('footer')
     </footer>
-
-
 @endsection

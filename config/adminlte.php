@@ -334,7 +334,7 @@ return [
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
-            'text' => 'Tabla Maria',
+            'text' => 'Eventos',
             'route' => 'eventos.index',
             'icon' => 'fas fa-fw fa-paw',
         ],

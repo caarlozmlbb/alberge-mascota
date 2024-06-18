@@ -1,0 +1,12 @@
+@extends('layouts.base')
+@section('contenido')
+<header>
+        @include('cabecera')
+</header>
+<main>
+    <p>Contenido</p>
+</main>
+<footer>
+    @include('footer')
+</footer>
+@endsection
