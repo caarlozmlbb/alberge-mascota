@@ -44,12 +44,36 @@
             <br>
             <h2 class="titulo">¿Cómo Puedo Ayudar?</h2>
         </div>
+
+        <div class="donation-group">
+            <div class="donar-item2">
+                <img src="{{ asset('images/card/banco.png') }}" alt="">
+                <p>Donando mediante nuestro código Qr o realizando un depósito bancario.También puedes hacerlo completando el Formulario de Donaciones presente en ésta página.</p>
+            </div>
+
+            <div class="donar-item2">
+                <img src="{{ asset('images/card/dinero.png') }}" alt="">
+                <p>Apadrinando a un animalito brindando apoyo económico para cubrir los costos de alimentación, cuidados veterinarios, medicamentos, alojamiento y demás necesidades del animal.</p>
+            </div>
+
+            <div class="donar-item2">
+                <img src="{{ asset('images/card/regalo.png') }}" alt="">
+                <p>Donando medicamentos, alimentos, colchones, mantitas, tapitas, y demás elementos de nuestra Lista de Insumos.
+                    Contáctanos para poder coordinar la entrega de tu ayuda.</p>
+            </div>
+        </div><br><br>
+
+        <div class="content">
+            <h2>Formulario de Donaciones</h2>
+            
+        </div>
     </section>
-    <section>
+
+    {{-- <section>
         <div class="container">
             <div class="card">
                 <div class="card-img">
-                    <img src="{{ asset('images/card/formularios.jpg') }}" alt="">
+                    <img src="{{ asset('images/card/formularios.jpg') }}" alt=""width="300">
                 </div>
 
                 <div class="card-body">
@@ -57,8 +81,7 @@
                 </div>
             </div>
         </div>
-    </section>   
-    
+    </section>    --}}
 </body>
 <footer>
     @include('footer')
