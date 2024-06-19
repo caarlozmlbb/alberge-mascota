@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\UsuariosController;
+//añadido para practicar
+use App\Http\Controllers\DonacionController;
+use App\Http\Controllers\HistoriaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,4 +79,6 @@ Route::post('/upload-image3', [ImageController::class, 'uploadImage3'])->name('u
 Route::get('/delete-image3/{imageName3}',[ImageController::class, 'deleteImage3'])->name('delete.image3');
 Route::post('/update-image3/{imageName3}', [ImageController::class, 'updateImage3'])->name('update.image3');
 
-
+//Añadido para practicar: crud Donaciones y Eventos
+route::resource('donaciones',DonacionController::class);
+route::resource('historias',HistoriaController::class);

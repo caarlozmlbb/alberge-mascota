@@ -7,64 +7,59 @@ use Illuminate\Http\Request;
 
 class DonacionController extends Controller
 {
-
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
-        $donacions = Donacion::all();
-        return view('donacion.index', ['donacions'=>$donacions]);
+        //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
-        return view('donacion.create');
+        //
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
-        // Validar los datos
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'monto' => 'required|decimal',
-            'fecha' => 'required|date',
-        ]);
-
-        // Crear nueva donacion
-        Donacion::create([
-            'nombre' => $request->nombre, // Asignar el nombre de la solicitud al campo 'nombre' del modelo
-            'monto' => $request->monto, // Asignar el monto de la solicitud al campo 'monto' del modelo
-            'fecha' => $request->fecha, // Asignar la fecha de la solicitud al campo 'fecha' del modelo
-        ]);
-
-        // Redirigir a la lista de donacions
-        return redirect()->route('donacions.index')->with('success', 'Donación agregada con éxito.');
+        //
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(Donacion $donacion)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit(Donacion $donacion)
     {
-        return view('donacion.update',['donacion' => $donacion]);
+        //
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, Donacion $donacion)
     {
-        $request->validate([
-            'nombre' => 'required|string|max:255',
-            'monto' => 'required|decimal',
-            'fecha' => 'required|date',
-        ]);
-
-        $donacion->update($request->all());
-        return redirect()->route('donacions.index')->with('success', 'Donación actualizada con éxito.');
+        //
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Donacion $donacion)
     {
-        {
-
-            // Eliminar la donacion de la base de datos
-            $donacion->delete();
-        
-            // Redirigir a la vista de índice con un mensaje de éxito
-            return redirect()->route('donacions.index')->with('success', 'Donación eliminada con éxito.');
-            }
+        //
     }
 }

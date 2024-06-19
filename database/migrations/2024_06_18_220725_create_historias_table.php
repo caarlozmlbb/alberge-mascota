@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('historias', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('usuario_id');
             $table->string('contenido');
             $table->date('fecha');
             $table->string('rutafoto')->nullable();
@@ -29,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('historias');
     }
 };
+

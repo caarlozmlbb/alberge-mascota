@@ -16,12 +16,5 @@ class Usuarios extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    public function historias()
-    {
-        return $this->hasMany(Historia::class);
-    }
-    public function donacions()
-    {
-        return $this->hasMany(Donacion::class);
-    }
+    
 }
