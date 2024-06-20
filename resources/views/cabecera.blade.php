@@ -10,20 +10,54 @@
     <a href="{{ route ('blog')}}">Blog</a>
     <a href="{{ route ('contacto')}}">Contacto</a>
     <a href="">Administrador</a>
-    @if (Route::has('login'))
-        @auth
-            <a href="{{ url('/dashboard') }}"
-                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-        @else
-            <a href="{{ route('login') }}"
-                class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Iniciar sesión</a>
+    <div id="login-register-links">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @else
+                        <a id="login-link" href="{{ route('logine') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                        @endif
+                    @endauth
+                @endif
+            </div>
 
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}"
-                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Registrarme</a>
-            @endif
-        @endauth
-    @endif
+            <div id="welcome-message" style="display: none;">
+                <p>Bienvenido ☺</p>
+                <a id="show-links" href="#">Mostrar enlaces</a>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Check if the login button has been clicked
+                    let loginClicked = localStorage.getItem('loginClicked');
+
+                    // Show links or welcome message based on loginClicked value
+                    if (loginClicked === 'true') {
+                        document.getElementById('login-register-links').style.display = 'none';
+                        document.getElementById('welcome-message').style.display = 'block';
+                    } else {
+                        document.getElementById('login-register-links').style.display = 'block';
+                        document.getElementById('welcome-message').style.display = 'none';
+                    }
+
+                    // Listen for click on login link
+                    document.getElementById('login-link').addEventListener('click', function() {
+                        localStorage.setItem('loginClicked', 'true');
+                        document.getElementById('login-register-links').style.display = 'none';
+                        document.getElementById('welcome-message').style.display = 'block';
+                    });
+
+                    // Listen for click on show links button
+                    document.getElementById('show-links').addEventListener('click', function() {
+                        localStorage.setItem('loginClicked', 'false');
+                        document.getElementById('login-register-links').style.display = 'block';
+                        document.getElementById('welcome-message').style.display = 'none';
+                    });
+                });
+            </script>
+
 </div>
 </nav>
 
