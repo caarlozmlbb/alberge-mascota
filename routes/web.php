@@ -8,6 +8,8 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UsuariosController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,26 @@ use App\Http\Controllers\UsuariosController;
 */
 
 use App\Models\Mascota;
+
+Route::get('/index', function(){
+    return view('index');
+})->name('index');
+
+Route::get('/como', function(){
+    return view('como');
+})->name('como');
+
+Route::get('/donaciones', function(){
+    return view('donaciones');
+})->name('donaciones');
+
+Route::get('/blog', function(){
+    return view('blog');
+})->name('blog');
+
+Route::get('/contacto', function(){
+    return view('contacto');
+})->name('contacto');
 
 Route::get('/', function () {
     $mascotas = Mascota::all(); // Obtener todas las mascotas desde la base de datos
@@ -62,5 +84,4 @@ Route::post('/update-image2/{imageName2}', [ImageController::class, 'updateImage
 Route::post('/upload-image3', [ImageController::class, 'uploadImage3'])->name('upload.image3');
 Route::get('/delete-image3/{imageName3}',[ImageController::class, 'deleteImage3'])->name('delete.image3');
 Route::post('/update-image3/{imageName3}', [ImageController::class, 'updateImage3'])->name('update.image3');
-
 

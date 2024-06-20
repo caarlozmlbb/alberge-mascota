@@ -326,7 +326,7 @@ return [
         [
             'text' => 'Editar perfil',
             'route' => 'profile.edit',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-edit',
         ],
         [
             'text' => 'Tabla Mascotas',
@@ -334,14 +334,24 @@ return [
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
-            'text' => 'Tabla Maria',
+            'text' => 'Eventos',
             'route' => 'eventos.index',
-            'icon' => 'fas fa-fw fa-paw',
+            'icon' => 'fa fa-calendar',
         ],
         [
             'text' => 'Tabla Usuarios',
             'route' => 'usuarios.index',
-            'icon' => 'fas fa-fw fa-paw',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Donaciones',
+            'route' => 'donacions.index',
+            'icon' => 'fas fa-donate',
+        ],
+        [
+            'text' => 'Historias de Adopción',
+            'route' => 'historias.index',
+            'icon' => 'fa fa-book',
         ],
         [
             'text' => 'change_password',
