@@ -59,12 +59,36 @@
         </div>
         <div class="mb-3">
             <label for="tipo" class="form-label">Tipo</label>
-            <select class="form-control" name="tipo" id="tipo" value="{{$usuario->tipo}}">
-                <option value="">Seleccione el tipo</option>
+            <select class="form-control" name="tipo" id="tipo">
+                <option value="{{$usuario->tipo}}">Seleccione el tipo</option>
                 <option value="donante">Donante</option>
                 <option value="voluntario">Voluntario</option>
                 <option value="adoptante">Adoptante</option>
             </select>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Numero de Telefono</label>
+            <input
+                type="number"
+                class="form-control"
+                name="n_telefono"
+                id=""
+                aria-describedby="helpId"
+                placeholder="Ej. 7314XXXXXX"
+                 value="{{$usuario->n_telefono}}"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Direccion</label>
+            <input
+                type="text"
+                class="form-control"
+                name="direccion"
+                id=""
+                aria-describedby="helpId"
+                placeholder="Ej, Av. Los andes El Alto"
+                 value="{{$usuario->direccion}}"
+            />
         </div>
       </div>
       <div class="modal-footer">

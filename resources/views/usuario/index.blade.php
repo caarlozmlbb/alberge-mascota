@@ -25,6 +25,9 @@
                     <th>EMAIL</th>
                     <th>CONTRASEÑA</th>
                     <th>TIPO</th>
+                    <th>TELEFONO</th>
+                    <th>DIRECCION</th>
+                    <th>IMAGEN</th>
                     <th colspan="2">Acciones</th>
                 </tr>
             </thead>
@@ -37,6 +40,16 @@
                         <td>{{ $usuario->email }}</td>
                         <td>{{ $usuario->contrasena }}</td>
                         <td>{{ $usuario->tipo }}</td>
+                        <td>{{ $usuario->n_telefono }}</td>
+                        <td>{{ $usuario->direccion }}</td>
+                        <td>
+                        <!-- Mostrar la imagen -->
+                        @if ($usuario->imagen)
+                            <img src="{{ asset('images/fotomascotas/' . $usuario->imagen) }}" alt="{{ $usuario->nombre }}" width="50">
+                        @else
+                            No Image
+                        @endif
+                        </td>
                         <td>
                             <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit{{ $usuario->id }}">
                             Editar

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('contrasena');
             $table->string('tipo');
             $table->string('n_telefono');
-            $table->string('rireccion');
+            $table->string('direccion');
             $table->string('imagen')->nullable();
             $table->timestamps();
         });

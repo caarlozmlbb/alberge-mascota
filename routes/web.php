@@ -5,6 +5,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UsuariosController;
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,12 @@ Route::resource('mascotas', MascotaController::class);
 Route::resource('eventos', EventoController::class);
 //ruta para llamar al usuario
 Route::resource('usuarios', UsuariosController::class);
+//rutas para realizar un registro del usuario
+Route::get('register', [RegisterController::class, 'index'])->name('register');
+Route::post('register', [RegisterController::class, 'store']);
+//rutas para el login del usuario
+Route::get('logine', [LoginController::class, 'index'])->name('logine');
+Route::post('logine', [LoginController::class, 'store']);
 
 
 Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');
