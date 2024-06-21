@@ -326,7 +326,7 @@ return [
         [
             'text' => 'Editar perfil',
             'route' => 'profile.edit',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-edit',
         ],
         [
             'text' => 'Tabla Historial',
@@ -339,14 +339,34 @@ return [
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
+<<<<<<< HEAD
             'text' => 'Tabla Eventos',
             'route' => 'eventos.index',
             'icon' => 'far fa-fw fa-calendar-alt',
+=======
+            'text' => 'Eventos',
+            'route' => 'eventos.index',
+            'icon' => 'fa fa-calendar',
+>>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
         ],
         [
             'text' => 'Tabla Usuarios',
             'route' => 'usuarios.index',
+<<<<<<< HEAD
             'icon' => 'fas fa-fw fa-users',
+=======
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Donaciones',
+            'route' => 'donacions.index',
+            'icon' => 'fas fa-donate',
+        ],
+        [
+            'text' => 'Historias de Adopción',
+            'route' => 'historias.index',
+            'icon' => 'fa fa-book',
+>>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
         ],
 
         [

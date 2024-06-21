@@ -15,9 +15,15 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
-      <form action="{{ route('usuarios.store') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
         @csrf
       <div class="modal-body">
+        <div class="preview-container">
+            <div class="preview-box" id="preview-box">
+                <img id="preview" src="" alt="Previsualización de la imagen" style="display: none;">
+                <span>Imagen</span>
+            </div>
+        </div>
         <div class="mb-3">
             <label for="" class="form-label">Nombre</label>
             <input
@@ -71,6 +77,32 @@
                 <option value="adoptante">Adoptante</option>
             </select>
         </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Numero de Telefono</label>
+            <input
+                type="number"
+                class="form-control"
+                name="n_telefono"
+                id=""
+                aria-describedby="helpId"
+                placeholder="Ej. 7314XXXXXX"
+            />
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label">Direccion</label>
+            <input
+                type="text"
+                class="form-control"
+                name="direccion"
+                id=""
+                aria-describedby="helpId"
+                placeholder="Ej, Av. Los andes El Alto"
+            />
+        </div>
+        <div class="form-group">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input type="file" id="imagen" name="rutafoto" class="form-control" required onchange="previewImage(event)">
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
@@ -80,5 +112,45 @@
     </div>
   </div>
 </div>
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var preview = document.getElementById('preview');
+            preview.src = reader.result;
+            preview.style.display = 'block';
+            document.querySelector('.preview-box span').style.display = 'none';
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+<style>
+  .preview-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+}
+
+.preview-box {
+    position: relative;
+    width: 200px; /* Ajusta el tamaño según tus necesidades */
+    height: 200px; /* Ajusta el tamaño según tus necesidades */
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Color de fondo cuando no hay imagen */
+}
+
+.preview-box img {
+    display: block; /* Asegura que la imagen sea visible cuando se cargue */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra completamente el contenedor */
+}
+
+</style>
 
 

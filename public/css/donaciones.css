@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        .donation
+        {   
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .donation .content
+        {
+            max-width: 1000px;
+            text-align: justify ;
+        }
+        .donation .content h2
+        {
+            font-size: 36px;
+            font-weight: 500;
+            
+        }
+        .donation .content p
+        {
+            font-weight: 300;
+        }
+    .donation-group
+    {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50 px;
+    }
+
+    .donar-item {
+        text-align: center;
+        max-width: 800px;
+        /*background-color: white;*/
+        /*border-radius: 10px;*/
+        padding: 20px;
+        /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+    }
+    
+    .donar-item img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .donar-item h3 {
+        margin: 0 0 15px 0;
+        color: #333;
+    }
+    
+    .donar-item p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 300px;
+    }
+
+    /* .container
+    {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        flex-basis: 300px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        max-width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 1rem;
+    }
+    
+    .card-img
+    {
+        padding-bottom: 56.25%;
+        
+    } */
+    .donar-item2 {
+        text-align: center;
+        max-width: 800px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .donar-item2 img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .donar-item2 h3 {
+        margin: 0 0 15px 0;
+        color: #333;
+    }
+    
+    .donar-item2 p {
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 300px;
+    }

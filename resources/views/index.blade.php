@@ -12,27 +12,63 @@
                 <a href="#">Acerca de</a>
                 <a href="#">Portafolio</a>
                 <a href="#">Servicios</a>
+<<<<<<< HEAD
                 @auth
                     @if (Auth::user()->name)
                         <a href="">{{ Auth::user()->name }}</a>
                     @endif
                 @endauth
 
+=======
+                <a href="">Administrador</a>
+                <div id="login-register-links">
+>>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}"
-                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}"
-                            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
-                            in</a>
-
+                        <a id="login-link" href="{{ route('logine') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
                         @endif
                     @endauth
                 @endif
+            </div>
+
+            <div id="welcome-message" style="display: none;">
+                <p>Bienvenido ☺</p>
+                <a id="show-links" href="#">Mostrar enlaces</a>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Check if the login button has been clicked
+                    let loginClicked = localStorage.getItem('loginClicked');
+
+                    // Show links or welcome message based on loginClicked value
+                    if (loginClicked === 'true') {
+                        document.getElementById('login-register-links').style.display = 'none';
+                        document.getElementById('welcome-message').style.display = 'block';
+                    } else {
+                        document.getElementById('login-register-links').style.display = 'block';
+                        document.getElementById('welcome-message').style.display = 'none';
+                    }
+
+                    // Listen for click on login link
+                    document.getElementById('login-link').addEventListener('click', function() {
+                        localStorage.setItem('loginClicked', 'true');
+                        document.getElementById('login-register-links').style.display = 'none';
+                        document.getElementById('welcome-message').style.display = 'block';
+                    });
+
+                    // Listen for click on show links button
+                    document.getElementById('show-links').addEventListener('click', function() {
+                        localStorage.setItem('loginClicked', 'false');
+                        document.getElementById('login-register-links').style.display = 'block';
+                        document.getElementById('welcome-message').style.display = 'none';
+                    });
+                });
+            </script>
             </div>
         </nav>
         <section class="textos-header">

@@ -5,13 +5,20 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UsuariosController;
+<<<<<<< HEAD
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\SolicitudController;
 use App\Models\Historial;
 use App\Models\Mascota;
 use App\Models\Solicitud;
 use App\Models\Evento;
+=======
+
+
+>>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +31,26 @@ use App\Models\Evento;
 */
 
 
+
+Route::get('/index', function(){
+    return view('index');
+})->name('index');
+
+Route::get('/como', function(){
+    return view('como');
+})->name('como');
+
+Route::get('/donaciones', function(){
+    return view('donaciones');
+})->name('donaciones');
+
+Route::get('/blog', function(){
+    return view('blog');
+})->name('blog');
+
+Route::get('/contacto', function(){
+    return view('contacto');
+})->name('contacto');
 
 Route::get('/', function () {
     $mascotas = Mascota::all(); // Obtener todas las mascotas desde la base de datos
@@ -46,8 +73,17 @@ require __DIR__.'/auth.php';
 Route::resource('mascotas', MascotaController::class);
 Route::resource('eventos', EventoController::class);
 Route::resource('usuarios', UsuariosController::class);
+<<<<<<< HEAD
 Route::resource('historiales', HistorialController::class);
 Route::resource('solicitudes', SolicitudController::class);
+=======
+//rutas para realizar un registro del usuario
+Route::get('register', [RegisterController::class, 'index'])->name('register');
+Route::post('register', [RegisterController::class, 'store']);
+//rutas para el login del usuario
+Route::get('logine', [LoginController::class, 'index'])->name('logine');
+Route::post('logine', [LoginController::class, 'store']);
+>>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
 
 
 Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');
@@ -61,5 +97,4 @@ Route::post('/update-image2/{imageName2}', [ImageController::class, 'updateImage
 Route::post('/upload-image3', [ImageController::class, 'uploadImage3'])->name('upload.image3');
 Route::get('/delete-image3/{imageName3}',[ImageController::class, 'deleteImage3'])->name('delete.image3');
 Route::post('/update-image3/{imageName3}', [ImageController::class, 'updateImage3'])->name('update.image3');
-
 
