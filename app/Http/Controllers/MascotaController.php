@@ -28,7 +28,7 @@ class MascotaController extends Controller
             'genero' => 'required|string',
             'raza' => 'required|string',
             'estado' => 'required|string',
-            'rutafoto' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validación de imagen
+            'rutafoto' => 'required|image|mimes:jpeg,png,jpg,gif', // |max:2048Validación de imagen
         ]);
 
         // Manejar la carga de la imagen
@@ -98,20 +98,20 @@ class MascotaController extends Controller
 
 
     public function destroy(Mascota $mascota)
-{
-    // Verificar si la mascota tiene una imagen y eliminarla del servidor
-    if ($mascota->rutafoto) {
-        $imagePath = public_path('images/fotomascotas/' . $mascota->rutafoto);
-        if (file_exists($imagePath)) {
-            unlink($imagePath);
+    {
+        // Verificar si la mascota tiene una imagen y eliminarla del servidor
+        if ($mascota->rutafoto) {
+            $imagePath = public_path('images/fotomascotas/' . $mascota->rutafoto);
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
         }
+
+        // Eliminar la mascota de la base de datos
+        $mascota->delete();
+
+        // Redirigir a la vista de índice con un mensaje de éxito
+        return redirect()->route('mascotas.index')->with('success', 'Mascota eliminada con éxito.');
     }
-
-    // Eliminar la mascota de la base de datos
-    $mascota->delete();
-
-    // Redirigir a la vista de índice con un mensaje de éxito
-    return redirect()->route('mascotas.index')->with('success', 'Mascota eliminada con éxito.');
-}
 
 }

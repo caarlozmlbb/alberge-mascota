@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evento;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class EventoController extends Controller
 {
-    
+
     public function index()
     {
-        $eventos = Evento::all();
-        return view('evento.index', ['eventos'=>$eventos]);
+    $eventos = Evento::with('usuario')->get();
+    return view('evento.index', ['eventos' => $eventos]);
     }
 
     public function create()
     {
-        return view('evento.create');
+        $usuarios = User::select('id','name')->get();
+        return view('evento.create', ['usuarios'=>$usuarios]);
     }
 
     public function store(Request $request)
@@ -27,6 +29,7 @@ class EventoController extends Controller
             'descripcion' => 'required|string',
             'fecha' => 'required|date',
             'tipo' => 'required|string',
+            'id_administrador' => 'required'
         ]);
 
         // Crear nuevo evento
@@ -35,7 +38,7 @@ class EventoController extends Controller
             'descripcion' => $request->descripcion, // Asignar la descripcion de la solicitud al campo 'descripcion' del modelo
             'fecha' => $request->fecha, // Asignar la fecha de la solicitud al campo 'fecha' del modelo
             'tipo' => $request->tipo, // Asignar el tipo de la solicitud al campo 'tipo' del modelo
-            
+            'id_administrador' => $request->id_administrador,
         ]);
 
         // Redirigir a la lista de eventos
@@ -49,7 +52,7 @@ class EventoController extends Controller
 
     public function update(Request $request, Evento $evento)
     {
- 
+
         $request->validate([
             'nombre' => 'required|string|max:255',
             'descripcion' => 'required|string',

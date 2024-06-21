@@ -12,7 +12,12 @@
                 <a href="#">Acerca de</a>
                 <a href="#">Portafolio</a>
                 <a href="#">Servicios</a>
-                <a href="">Administrador</a>
+                @auth
+                    @if (Auth::user()->name)
+                        <a href="">{{ Auth::user()->name }}</a>
+                    @endif
+                @endauth
+
                 @if (Route::has('login'))
                     @auth
                         <a href="{{ url('/dashboard') }}"
@@ -36,7 +41,6 @@
             <a href="{{ route('login') }}" class="btn btn-4">ACCEDER
                 <i class="fa-solid fa-paw"></i>
             </a>
-
         </section>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
@@ -81,7 +85,7 @@
         <section>
             <section class="portafolio">
                 <div class="contenedor">
-                    <h2 class="titulo">Portafolio</h2>
+                    <h2 class="titulo">Eventos</h2>
                     <div class="galeria-port">
                         <div class="imagen-port">
                             <img src="{{ asset('images/perrito.jpg') }}" alt="">
@@ -232,6 +236,4 @@
         </div>
         <h2 class="titulo-final">&copy; Carlos Mamani corasdas | sdsdsad</h2>
     </footer>
-
-
 @endsection

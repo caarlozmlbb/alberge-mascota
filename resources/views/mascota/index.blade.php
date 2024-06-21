@@ -48,10 +48,10 @@
                             <a href="{{ route('mascotas.edit', $mascota) }}" class="btn btn-warning">Actualizar</a>
                         </td>
                         <td>
-                            <form action="{{ route('mascotas.destroy', $mascota) }}" method="POST">
+                            <form id="deleteForm{{ $mascota->id }}" action="{{ route('mascotas.destroy', $mascota) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                <button type="button" onclick="deleteEvento({{ $mascota->id }})" class="btn btn-danger">Eliminar</button>
                             </form>
                         </td>
                     </tr>
@@ -81,4 +81,6 @@
 @stop
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{asset('js/alerts.js')}}"></script>
 @stop

@@ -6,6 +6,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MascotaController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\HistorialController;
+use App\Http\Controllers\SolicitudController;
+use App\Models\Historial;
+use App\Models\Mascota;
+use App\Models\Solicitud;
+use App\Models\Evento;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +23,7 @@ use App\Http\Controllers\UsuariosController;
 |
 */
 
-use App\Models\Mascota;
+
 
 Route::get('/', function () {
     $mascotas = Mascota::all(); // Obtener todas las mascotas desde la base de datos
@@ -39,8 +45,9 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 Route::resource('mascotas', MascotaController::class);
 Route::resource('eventos', EventoController::class);
-//ruta para llamar al usuario
 Route::resource('usuarios', UsuariosController::class);
+Route::resource('historiales', HistorialController::class);
+Route::resource('solicitudes', SolicitudController::class);
 
 
 Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');

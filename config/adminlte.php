@@ -329,20 +329,26 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Tabla Historial',
+            'route' => 'historiales.index',
+            'icon' => 'fas fa-fw fa-file-medical',
+        ],
+        [
             'text' => 'Tabla Mascotas',
             'route' => 'mascotas.index',
             'icon' => 'fas fa-fw fa-paw',
         ],
         [
-            'text' => 'Tabla Maria',
+            'text' => 'Tabla Eventos',
             'route' => 'eventos.index',
-            'icon' => 'fas fa-fw fa-paw',
+            'icon' => 'far fa-fw fa-calendar-alt',
         ],
         [
             'text' => 'Tabla Usuarios',
             'route' => 'usuarios.index',
-            'icon' => 'fas fa-fw fa-paw',
+            'icon' => 'fas fa-fw fa-users',
         ],
+
         [
             'text' => 'change_password',
             'url' => 'admin/settings',

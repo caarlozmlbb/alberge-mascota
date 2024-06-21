@@ -19,7 +19,7 @@
 <div class="form-container">
     <h2>Agregar Nueva Mascota</h2>
     <a href="{{ route('mascotas.index') }}">Regresar</a>
-    <form id="mascotaForm" action="{{ route('mascotas.store') }}" method="POST" enctype="multipart/form-data">
+    <form id="eventoForm" action="{{ route('mascotas.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="preview-container">
             <div class="preview-box" id="preview-box">
@@ -65,7 +65,7 @@
             <input type="file" id="imagen" name="rutafoto" class="form-control" required onchange="previewImage(event)">
         </div>
         <div class="form-actions">
-            <button type="submit" class="btn-submit">Agregar</button>
+            <button type="button" onclick="confirmCreate()" class="btn-submit">Agregar</button>
         </div>
     </form>
 </div>
@@ -90,4 +90,6 @@
 
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="{{asset('js/alerts.js')}}"></script>
 @stop

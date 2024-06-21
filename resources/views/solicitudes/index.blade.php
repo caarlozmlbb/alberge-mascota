@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-
     <div class="container">
         {{-- <h5 class="text-center"> Hola {{ Auth::user()->name }}</h5> --}}
         <div class="header">
@@ -23,27 +22,27 @@
                         <th>Descripción</th>
                         <th>Fecha</th>
                         <th>Tipo</th>
-                        <th>Aprobado por</th>
+                        <th>Id_administrador</th>
                         <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($eventos as $evento)
+                    @foreach ($solicitudes as $solicitud)
                         <tr>
-                            <td>{{ $evento->id }}</td>
-                            <td>{{ $evento->nombre }}</td>
-                            <td>{{ $evento->descripcion }}</td>
-                            <td>{{ $evento->fecha }}</td>
-                            <td>{{ $evento->tipo }}</td>
-                            <td>{{ $evento->usuario->name }}</td>
+                            <td>{{ $solicitud->id_solicitud }}</td>
+                            <td>{{ $solicitud->nombre }}</td>
+                            <td>{{ $solicitud->descripcion }}</td>
+                            <td>{{ $solicitud->fecha }}</td>
+                            <td>{{ $solicitud->tipo }}</td>
+                            <td></td>
                             <td>
                                 <a href="{{ route('eventos.edit', $evento) }}" class="btn btn-warning">Actualizar</a>
                             </td>
                             <td>
-                                <form id="deleteForm{{ $evento->id }}" action="{{ route('eventos.destroy', $evento) }}" method="POST">
+                                <form action="{{ route('eventos.destroy', $evento) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="button" onclick="deleteEvento({{ $evento->id }})" class="btn btn-danger">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
@@ -52,17 +51,25 @@
             </table>
         </div>
     </div>
-    <!-- SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <style>
+    .table-container {
+        max-height: 400px; /* Ajusta esto según tus necesidades */
+        overflow-y: auto;
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+    }
+
+    .table th, .table td {
+        padding: 15px;
+        text-align: left;
+    }
+    </style>
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/mascota/tabla.css') }}">
+<link rel="stylesheet" href="{{ asset('css/mascota/tabla.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 @stop
-
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="{{asset('js/alerts.js')}}"></script>
 @stop
