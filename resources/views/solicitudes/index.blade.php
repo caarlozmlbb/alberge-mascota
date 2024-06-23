@@ -10,7 +10,7 @@
     <div class="container">
         {{-- <h5 class="text-center"> Hola {{ Auth::user()->name }}</h5> --}}
         <div class="header">
-            <h1>Tabla Eventos</h1>
+            <h1>Tabla Solicitudes</h1>
             <a href="{{ route('eventos.create') }}" class="btn btn-primary">Agregar Evento</a>
         </div>
         <div class="table-container">
@@ -18,11 +18,10 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Descripción</th>
-                        <th>Fecha</th>
-                        <th>Tipo</th>
-                        <th>Id_administrador</th>
+                        <th>nombre mascota</th>
+                        <th>Nombre Usuario</th>
+                        <th>ESTADO</th>
+                        <th>Aprobado por</th>
                         <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
@@ -30,16 +29,15 @@
                     @foreach ($solicitudes as $solicitud)
                         <tr>
                             <td>{{ $solicitud->id_solicitud }}</td>
-                            <td>{{ $solicitud->nombre }}</td>
-                            <td>{{ $solicitud->descripcion }}</td>
-                            <td>{{ $solicitud->fecha }}</td>
-                            <td>{{ $solicitud->tipo }}</td>
-                            <td></td>
+                            <td>{{ $solicitud->mascota->nombre }}</td>
+                            <td>{{ $solicitud->usuariosolicitud->nombre }}</td>
+                            <td>{{ $solicitud->estado }}</td>
+                            <td>{{ $solicitud->admin->name }}</td>
                             <td>
-                                <a href="{{ route('eventos.edit', $evento) }}" class="btn btn-warning">Actualizar</a>
+                                <a href="{{ route('solicitudes.edit', $solicitud->id_solicitud) }}" class="btn btn-warning">Actualizar</a>
                             </td>
                             <td>
-                                <form action="{{ route('eventos.destroy', $evento) }}" method="POST">
+                                <form action="{{ route('solicitudes.destroy', $solicitud->id_solicitud) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Eliminar</button>

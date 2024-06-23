@@ -116,7 +116,7 @@
         <p>Crea tu cuenta para formar parte de nuestra comunidad y ayudar a los animales en necesidad.</p>
     </header>
   <div class="container">
-    <form action="{{ route('register') }}" method="post" enctype="multipart/form-data" class="border p-4 rounded" onsubmit="return handleRegistration(event)">
+    <form action="{{ route('usuarios.store') }}" method="post" enctype="multipart/form-data" class="border p-4 rounded" onsubmit="return handleRegistration(event)">
       @csrf
 
       <h2 style="text-align: center;">Datos Personales</h2>
@@ -212,15 +212,7 @@
         const nombre = formData.get('nombre');
         const apellido = formData.get('apellido');
         const email = formData.get('email');
-
-        // Send the data to the server (you'll need to implement this using your server-side code)
-        // For now, we'll just simulate a successful registration
-
         alert(`¡Registro correcto, ${nombre} ${apellido}! Ya puede iniciar sesión con su correo electrónico: ${email}`);
-
-        // You can also redirect the user to the login page after successful registration
-        // window.location.href = '/login';
-
         return true; // Prevent further form processing
     }
 

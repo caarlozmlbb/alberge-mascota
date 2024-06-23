@@ -11,19 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('solicitudes_adopciones', function (Blueprint $table) {
-            $table->id('id_solicitud');
+        Schema::create('solicitudes', function (Blueprint $table) {
+             $table->id('id_solicitud');
             $table->unsignedBigInteger('id_mascota');
-            $table->integer('id_usuario');
+            $table->unsignedBigInteger('id_usuario');
             $table->enum('estado',['Aprobado','Pendiente','Rechazada'])->nullable();
-            $table->integer('id_administrador');
+            $table->unsignedBigInteger('id_administrador');
             $table->foreign('id_mascota')->references('id')->on('mascotas')->onDelete('cascade');
+            $table->foreign('id_usuario')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('id_administrador')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('solicitudes_adopciones');
+        Schema::dropIfExists('solicitudes');
     }
 };

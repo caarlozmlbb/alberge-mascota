@@ -11,10 +11,13 @@ class Usuarios extends Model
     protected $table = 'usuarios';
     protected $primarykey = 'id';
     protected $fillable = [
-        'nombre', 'apellido', 'email', 'contrasena', 'tipo', 'n_telefono', 'direccion', 'imagen'
+        'nombre', 'apellido', 'email', 'contrasena', 'tipo', 'direccion', 'n_telefono', 'direccion', 'imagen'
     ];
     protected $guarded = [];
     public $timestamps = false;
 
-    
+    public function solicitud()
+    {
+        return $this->hasMany(Solicitude::class); //id_del usuario
+    }
 }

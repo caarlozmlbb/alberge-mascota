@@ -8,17 +8,14 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UsuariosController;
-<<<<<<< HEAD
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\SolicitudController;
 use App\Models\Historial;
 use App\Models\Mascota;
+use App\Models\Usuarios;
 use App\Models\Solicitud;
 use App\Models\Evento;
-=======
 
-
->>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,31 +27,58 @@ use App\Models\Evento;
 |
 */
 
-
-
 Route::get('/index', function(){
     return view('index');
 })->name('index');
 
 Route::get('/como', function(){
-    return view('como');
+    $usuario = "";
+    return view('como', ['usuario' => $usuario]);
 })->name('como');
 
 Route::get('/donaciones', function(){
-    return view('donaciones');
+    $usuario = "";
+    return view('donaciones', ['usuario' => $usuario]);
 })->name('donaciones');
 
 Route::get('/blog', function(){
-    return view('blog');
+    $usuario = "";
+    return view('blog', ['usuario' => $usuario]);
 })->name('blog');
 
+Route::get('/usuarioformulario', function(){
+    $usuario = "";
+    return view('usuario.register', ['usuario' => $usuario]);
+})->name('usuarioformulario');
+
 Route::get('/contacto', function(){
-    return view('contacto');
+    $usuario = "";
+    return view('contacto', ['usuario' => $usuario]);
 })->name('contacto');
 
+Route::get('/adopciones', function(){
+    $usuario = "";
+    $mascotas = Mascota::all();
+    return view('adopciones',['mascotas' => $mascotas ,'usuario' => $usuario]);
+})->name('adopciones');
+
+
+Route::get('/perfil/{id}', function ($id) {
+    $usuario = Usuarios::findOrFail($id);
+    $mascotas = Mascota::all();
+    return view('./index', ['usuario' => $usuario, 'mascotas' => $mascotas]);
+})->name('perfil');
+
+
+Route::get('/registrar', function(){
+    return view('auth.register');
+})->name('registrar');
+
+
 Route::get('/', function () {
+    $usuario = "";
     $mascotas = Mascota::all(); // Obtener todas las mascotas desde la base de datos
-    return view('index', ['mascotas' => $mascotas]);
+    return view('index', ['mascotas' => $mascotas , 'usuario' => $usuario]);
 })->name('index');
 
 Route::get('/dashboard', function () {
@@ -73,17 +97,15 @@ require __DIR__.'/auth.php';
 Route::resource('mascotas', MascotaController::class);
 Route::resource('eventos', EventoController::class);
 Route::resource('usuarios', UsuariosController::class);
-<<<<<<< HEAD
 Route::resource('historiales', HistorialController::class);
 Route::resource('solicitudes', SolicitudController::class);
-=======
+
 //rutas para realizar un registro del usuario
-Route::get('register', [RegisterController::class, 'index'])->name('register');
-Route::post('register', [RegisterController::class, 'store']);
-//rutas para el login del usuario
-Route::get('logine', [LoginController::class, 'index'])->name('logine');
-Route::post('logine', [LoginController::class, 'store']);
->>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
+// Route::get('register', [RegisterController::class, 'index'])->name('register');
+// Route::post('register', [RegisterController::class, 'store']);
+// //rutas para el login del usuario
+// Route::get('logine', [LoginController::class, 'index'])->name('logine');
+// Route::post('logine', [LoginController::class, 'store']);
 
 
 Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');

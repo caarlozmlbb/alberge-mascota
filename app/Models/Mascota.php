@@ -17,4 +17,9 @@ class Mascota extends Model
     {
         return $this->hasMany(Historiale::class, 'id');
     }
+
+    public function solicitud()
+    {
+        return $this->hasMany(Solicitude::class); //id_del usuario
+    }
 }

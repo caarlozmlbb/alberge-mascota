@@ -12,4 +12,4 @@
         <p>68166901</p>
     </div>
 </div>
-<h2 class="titulo-final">&copy; Carlos Mamani corasdas | sdsdsad</h2>
+<h2 class="titulo-final">&copy; Nombre de los Autores | sdsdsad</h2>

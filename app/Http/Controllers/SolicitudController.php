@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Solicitud;
+use App\Models\Solicitude;
 use Illuminate\Http\Request;
 
 class SolicitudController extends Controller
@@ -10,10 +10,9 @@ class SolicitudController extends Controller
 
     public function index()
     {
-        $solicitudes = Solicitud::all();
+        $solicitudes = Solicitude::all();
         return view('solicitudes.index',['solicitudes' => $solicitudes]);
     }
-
 
     public function create()
     {
@@ -25,22 +24,22 @@ class SolicitudController extends Controller
         //
     }
 
-    public function show(Solicitud $solicitud)
+    public function show(Solicitude $solicitude)
     {
         //
     }
 
-    public function edit(Solicitud $solicitud)
+    public function edit(Solicitude $solicitude)
+    {
+        return view('solicitudes.update', ['solicitude' => $solicitude]);
+    }
+
+    public function update(Request $request, Solicitude $solicitude)
     {
         //
     }
 
-    public function update(Request $request, Solicitud $solicitud)
-    {
-        //
-    }
-
-    public function destroy(Solicitud $solicitud)
+    public function destroy(Solicitude $solicitude)
     {
         //
     }

@@ -336,39 +336,33 @@ return [
         [
             'text' => 'Tabla Mascotas',
             'route' => 'mascotas.index',
-            'icon' => 'fas fa-fw fa-paw',
+            'icon' => 'fas fa-fw fa-paw'
         ],
         [
-<<<<<<< HEAD
             'text' => 'Tabla Eventos',
             'route' => 'eventos.index',
-            'icon' => 'far fa-fw fa-calendar-alt',
-=======
-            'text' => 'Eventos',
-            'route' => 'eventos.index',
-            'icon' => 'fa fa-calendar',
->>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
+            'icon' => 'far fa-fw fa-calendar-alt'
         ],
         [
             'text' => 'Tabla Usuarios',
             'route' => 'usuarios.index',
-<<<<<<< HEAD
-            'icon' => 'fas fa-fw fa-users',
-=======
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-fw fa-users'
         ],
         [
             'text' => 'Donaciones',
-            'route' => 'donacions.index',
+            'route' => 'donaciones',
             'icon' => 'fas fa-donate',
         ],
+        // [
+        //     'text' => 'Historias de Adopción',
+        //     'route' => 'historias.index',
+        //     'icon' => 'fa fa-book',
+        // ],
         [
-            'text' => 'Historias de Adopción',
-            'route' => 'historias.index',
-            'icon' => 'fa fa-book',
->>>>>>> ce00ac67031dad53e6c561c929507fe8ed2bf6ec
+            'text' => 'Solicitud Adopciones',
+            'route' => 'solicitudes.index',
+            'icon' => 'fas fa-donate',
         ],
-
         [
             'text' => 'change_password',
             'url' => 'admin/settings',

@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Evento::class); //id_del usuario
     }
+
+    public function solicitud()
+    {
+        return $this->hasMany(Solicitude::class); //id_del usuario
+    }
 }

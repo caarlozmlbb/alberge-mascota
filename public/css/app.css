@@ -37,41 +37,44 @@ header {
   nav {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center; /* Cambiado a center para alinear verticalmente */
     padding: 30px 50px 0 50px;
     background: rgba(255, 255, 255, 0.467);
     height: 9%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
-  }
+}
 
-  .nav-links {
+.nav-links {
     display: flex;
-  }
+    align-items: center; /* Alinea los enlaces verticalmente */
+    margin-left: auto; /* Empuja los enlaces hacia la derecha */
+}
 
-  .nav-links > a {
+.nav-links > a {
     color: #7f7d7d;
     font-weight: 300;
     text-decoration: none;
     margin-right: 20px;
-    transition: color 0.3s ease, transform 0.3s ease; /* Agregamos la transición para transform */
-  }
+    margin-top: -25px; /* Ajusta el margen superior para subir los enlaces */
+    transition: color 0.3s ease, transform 0.3s ease; /* Agrega transición para transform */
+}
 
-  .nav-links > a:hover {
+.nav-links > a:hover {
     text-decoration: underline;
     color: #030202;
-    transform: translateY(-3px); /* Elevamos el elemento 3px hacia arriba */
-  }
+    transform: translateY(-3px); /* Eleva el enlace 3px hacia arriba al pasar el mouse */
+}
 
-  nav > a {
+nav > a {
     color: #7f7d7d;
     font-weight: 300;
     text-decoration: none;
     margin-right: 10px;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease; /* Agregamos la transición para transform */
-  }
+}
 
-  nav > a::before {
+nav > a::before {
     content: "";
     position: absolute;
     bottom: -2px;
@@ -80,17 +83,16 @@ header {
     height: 2px;
     background-color: transparent;
     transition: background-color 0.3s ease;
-  }
+}
 
-  nav > a:hover::before {
+nav > a:hover::before {
     background-color: #f8f8f8;
-  }
+}
 
-  nav > a:hover {
+nav > a:hover {
     color: #f8f8f8;
     transform: translateY(-3px); /* Elevamos el elemento 3px hacia arriba */
-  }
-
+}
 
 .logo {
     margin-right: auto; /* Empuja el logo hacia el extremo derecho */
@@ -103,10 +105,37 @@ header {
     height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
 }
 
+/* Estilos específicos para el enlace "Registrarce" */
+.button-link {
+    background-color: white;
+    color: #7f7d7d;
+    border: 1px solid #7f7d7d;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none; /* Quita la subrayado del enlace */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #7f7d7d;
+    color: white;
+    transform: translateY(-3px); /* Eleva el botón 3px hacia arriba */
+}
+
+.profile-image {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    /*margin-top: -25px;*/
+}
+
+
 .lugrasimo-regular {
     font-family: "Lugrasimo", cursive;
     font-weight: 400;
     font-style: normal;
+
   }
 
   /************LETRA************/
@@ -118,7 +147,7 @@ header {
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   animation: glow 2s ease-in-out infinite alternate;
 }
 
@@ -496,3 +525,24 @@ footer{
     }
 }
 
+.galeria-mascotas{
+    margin: 10px 20px;
+    box-shadow: 0 4px 8px 0 lightskyblue, 0 6px 20px rgba(0, 0, 0, 0.19);
+    float: left;
+    width: 350px;
+}
+
+.galeria-mascotas img{
+    width: 100%;
+    height: auto;
+}
+
+.galeria-mascotas:hover{
+    border: 1px solid lightcoral;
+    transform: rotate(-3deg);
+}
+
+.pie{
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(0, 75, 113);
+}

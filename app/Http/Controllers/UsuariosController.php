@@ -19,28 +19,23 @@ class UsuariosController extends Controller
         return view('usuario.index', ['usuario' => $usuario]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         // Define validation rules
         $request->validate([
-            'nombre' => 'required|min:3|string|max:255', // Add validation rules for 'nombre'
-            'apellido' => 'required|min:3|string|max:255', // Add validation rules for 'apellido'
-            'email' => 'required|email|unique:usuarios', // Add validation rules for 'email'
-            'contrasena' => 'required|min:8', // Add validation rules for 'contrasena'
-            'tipo' => 'required|in:adoptante,donante,voluntario', // Add validation rules for 'tipo'
+            'nombre' => 'required',
+            'apellido' => 'required',
+            'email' => 'required|email',
+            'contrasena' => 'required',
+            'tipo' => 'required',
         ]);
-        
+
         // Manejar la carga de la imagen
         $imageName = null; // Inicializar la variable $imageName como null
         if ($request->hasFile('rutafoto')) { // Verificar si se ha cargado un archivo de imagen
@@ -49,39 +44,31 @@ class UsuariosController extends Controller
             $image->move(public_path('images/fotomascotas'), $imageName); // Mover la imagen a la carpeta 'public/images' con el nombre generado
         }
         // Create new user
-        Usuarios::create([
+        $usuario = Usuarios::create([
             'nombre' => $request->nombre,
             'apellido' => $request->apellido,
             'email' => $request->email,
-            'contrasena' => $request->contrasena, // Hash the password before saving
+            'contrasena' =>bcrypt($request->contrasena), // Hash the password before saving
             'tipo' => $request->tipo,
             'n_telefono' => $request->n_telefono,
             'direccion' => $request->direccion,
             'imagen' => $imageName
         ]);
-    
-        return redirect()->route('usuarios.index')->with('success', 'Usuario agregado con éxito.');
+
+        return redirect()->route('perfil', ['id' => $usuario->id]);
     }
-    
-    /**
-     * Display the specified resource.
-     */
+
+
     public function show(Usuarios $usuarios)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
          // Define validation rules
@@ -91,7 +78,7 @@ class UsuariosController extends Controller
         'contrasena' => 'required|min:8', // Add validation rules for 'contrasena'
         'tipo' => 'required|in:adoptante,donante,voluntario', // Add validation rules for 'tipo'
         ]);
-        
+
         // Find the user and update
         $usuario = Usuarios::find($id);
         $usuario->nombre = $request->nombre;
@@ -102,14 +89,11 @@ class UsuariosController extends Controller
         $usuario->n_telefono = $request->n_telefono;
         $usuario->direccion = $request->direccion;
         $usuario->update();
-    
+
         return redirect()->route('usuarios.index')->with('success', 'Usuario actualizado con éxito.');
     }
-    
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy($id)
     {
         $usuario=Usuarios::find($id);
