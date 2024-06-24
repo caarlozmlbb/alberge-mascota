@@ -1,7 +1,7 @@
 <header>
     @include('cabecera')
     <section class="textos-header">
-        <h1 id="header-text-2">{{ $usuario->nombre }} Adoptar es un grato acto de amor que transforma dos vidas a la vez.</h1>
+        <h1 id="header-text-2" style="font-size:50px;">{{ $usuario->nombre }} Adoptar es un grato acto de amor que transforma dos vidas a la vez.</h1>
     </section>
 </header>
 <p></p>
@@ -20,7 +20,6 @@
     <input type="text" name="estado" value="Pendiente">
     <button type="submit">Enviar Solicitud</button>
 </form>
-
 
 
 

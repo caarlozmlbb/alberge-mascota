@@ -10,7 +10,7 @@
     <div class="form-container">
         <h2>Agregar Nuevo Evento</h2>
         <a href="{{ route('eventos.index') }}">Regresar</a>
-        <h5 class="text-center">Hola, {{ Auth::user()->name }}</h5>
+        {{-- <h5 class="text-center">Hola, {{ Auth::user()->name }}</h5> --}}
         <form id="eventoForm" action="{{ route('eventos.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="preview-container">

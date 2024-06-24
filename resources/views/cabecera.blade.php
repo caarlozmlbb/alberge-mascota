@@ -10,13 +10,14 @@
         <a href="{{ route('como') }}">¿Como Adoptar?</a>
         <a href="{{ route('adopciones') }}">Adopciones</a>
         <a href="{{ route('dona') }}">Donaciones</a>
-        <a href="{{ route('blog') }}">Blog</a>
+        <a href="{{ route('historia') }}">Historias</a>
         <a href="{{ route('contacto') }}">Contacto</a>
 
         @if ($usuario != null)
-            <a href="#">{{ $usuario->nombre }}</a>
-            <a href=""><img src="{{ asset('images/fotomascotas/' . $usuario->imagen) }}" class="profile-image"></a>
+            <a href="{{route('editarperfil')}}">{{ $usuario->nombre }}</a>
+            <a href="{{route('editarperfil')}}"><img src="{{ asset('images/fotomascotas/' . $usuario->imagen) }}" class="profile-image"></a>
         @else
+            <a href="{{ route('logine') }}">Log in</a>
             <a href="{{ route('usuarioformulario') }}" class="button-link">Registrate Gratis</a>
         @endif
 

@@ -46,7 +46,8 @@ class UsuariosController extends Controller
         'nombre' => $request->nombre,
         'apellido' => $request->apellido,
         'email' => $request->email,
-        'contrasena' => bcrypt($request->contrasena),
+        // 'contrasena' => bcrypt($request->contrasena),
+        'contrasena' =>$request->contrasena,
         'tipo' => $request->tipo,
         'n_telefono' => $request->n_telefono,
         'direccion' => $request->direccion,
@@ -90,8 +91,9 @@ class UsuariosController extends Controller
         $usuario->direccion = $request->direccion;
         $usuario->update();
 
-        return redirect()->route('usuarios.index')->with('success', 'Usuario actualizado con éxito.');
+        return redirect()->route('index')->with('success', 'Usuario actualizado con éxito.');
     }
+
 
 
     public function destroy($id)

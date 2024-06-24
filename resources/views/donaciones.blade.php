@@ -2,7 +2,7 @@
 <header>
         @include('cabecera')
         <section class="textos-header">
-            <h1 id="header-text-2">DONAR</h1>
+            <h1 id="header-text-2" style="font-size:50px;">DONAR</h1>
         </section>
         <link rel="stylesheet" href="{{ asset('css/donaciones.css') }}">
 </header>

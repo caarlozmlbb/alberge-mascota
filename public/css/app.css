@@ -16,11 +16,28 @@ body{
     overflow: hidden;
 }
 
-.titulo{
-    color: #642a73;
+.titulo {
     font-size: 30px;
     text-align: center;
     margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff87, #0096ff, #00ffff, #4169e1);
+    background-size: 300% 300%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 header {
@@ -214,7 +231,7 @@ header .textos-header{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../images/gato.jpg); /* Reemplaza esta ruta por la ruta de tu imagen de fondo */
+    background-image: url(../images/bg3.jpg); /* Reemplaza esta ruta por la ruta de tu imagen de fondo */
     background-size: cover; /* Esto hará que la imagen cubra todo el área */
     background-position: center; /* Esto centrará la imagen */
     filter: blur(5px); /* Esto difuminará la imagen, puedes ajustar el valor según tus preferencias */
@@ -232,7 +249,7 @@ header .textos-header{
 .imagen-port{
     width: 24%;
     margin-bottom: 10px;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -252,7 +269,7 @@ header .textos-header{
     height: 100%;
     top: 0;
     transform: scale(0);
-    background: hsla(273, 91%, 27%, 0.7);
+    background: hsla(61, 100%, 51%, 0.381);
     transition: transform .5s;
     display: flex;
     justify-content: center;
@@ -261,11 +278,11 @@ header .textos-header{
 }
 
 .hover-galeria img{
-    width: 50px;
+    width: 100px;
 }
 
 .hover-galeria p{
-    color: #fff;
+    color: #000000;
 }
 
 .imagen-port:hover .hover-galeria{
@@ -361,7 +378,7 @@ footer{
 }
 .content-foo h4{
     color: #ccc;
-    border-bottom: 3px solid #af20d3;
+    border-bottom: 3px solid #a3d320;
     padding-bottom: 5px;
     margin-bottom: 10px;
 }
@@ -464,7 +481,9 @@ footer{
 }
 
 .card .cover img{
+    border-radius: 100px;
     width: 250px;
+    height: 250px;
     display: block;
     margin: auto;
     position: relative;
@@ -536,9 +555,11 @@ footer{
 
 /* Estilo para cada galería de mascotas */
 .galeria-mascotas {
+    border-radius: 15px;
     margin: 10px;
     box-shadow: 0 4px 8px 0 lightskyblue, 0 6px 20px rgba(0, 0, 0, 0.19);
     width: 350px;
+
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho y el alto del elemento */
     text-align: center; /* Centra el texto dentro de cada tarjeta */
 }
@@ -546,7 +567,7 @@ footer{
 /* Estilo para las imágenes dentro de cada galería de mascotas */
 .galeria-mascotas img {
     width: 100%;
-    height: auto;
+    height: 350px;
 }
 
 /* Efecto hover para la galería de mascotas */
@@ -559,4 +580,19 @@ footer{
 .pie {
     text-align: center;
     text-shadow: 2px 2px 5px rgb(0, 75, 113);
+}
+
+.btn-descripcion {
+    padding: 8px 40px;
+    background-color: #94c257;
+    color: #ffffff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+.btn-descripcion:hover {
+    background-color: #caf11c;
 }
