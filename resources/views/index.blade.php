@@ -193,45 +193,74 @@
             width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    <div class="carrusel">
-        <div class="carrusel-items">
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/gatos-y-perros.jpeg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-        </div>
+    <div class="carrusel"> 
+        <div class="carrusel-items"> 
+             
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Yasu.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Susu.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Akari.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Alaska.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Sasha.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Bombom.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Bonnie.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Buba.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Coffe.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Ziggy_y_Sammy.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Dante.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Ikki_y_Aki.jpeg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Loki.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Maylo.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Oliver.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Benji.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Milan.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Muffin.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Odin.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/miau.jpg') }}" alt=""> 
+            </div> 
+            <div class="carrusel-item"> 
+                <img src="{{ asset('images/fondo/Rabbit.jpg') }}" alt=""> 
+            </div> 
+            
+        </div> 
     </div>
 
     <footer>
