@@ -56,6 +56,19 @@
                 <option value="malo" {{ $mascota->estado == 'malo' ? 'selected' : '' }}>Malo</option>
             </select>
         </div>
+
+        <div class="form-group">
+            <label for="tipo" class="form-label">Tipo de animal</label>
+            <select name="tipo" class="form-control" required>
+                <option value="">Seleccione</option>
+                <option value="Perros" {{ $mascota->tipo == 'Perros' ? 'selected' : '' }}>Perros</option>
+                <option value="Gatos" {{ $mascota->tipo == 'Gatos' ? 'selected' : '' }}>Gatos</option>
+                <option value="Conejos" {{ $mascota->tipo == 'Conejos' ? 'selected' : '' }}>Conejos</option>
+                <option value="Roedores" {{ $mascota->tipo == 'Roedores' ? 'selected' : '' }}>Roedores</option>
+                <option value="Animales exoticos" {{ $mascota->tipo == 'Animales exoticos' ? 'selected' : '' }}>Animales exóticos</option>
+                <option value="Animales de Granja" {{ $mascota->tipo == 'Animales de Granja' ? 'selected' : '' }}>Animales de Granja</option>
+            </select>
+        </div>
         <div class="form-group">
             <label for="rutafoto" class="form-label">Foto</label>
             <input type="file" class="form-control" id="rutafoto" name="rutafoto" onchange="previewImage(event)">

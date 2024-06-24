@@ -51,6 +51,11 @@ Route::get('/usuarioformulario', function () {
     return view('usuario.register');
 })->name('usuarioformulario');
 
+//ruta del donador
+Route::get('/donadorform', function () {
+    return view('donacion.donador');
+})->name('donadorform');
+
 Route::get('/contacto', function () {
     return view('contacto');
 })->name('contacto');

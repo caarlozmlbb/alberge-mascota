@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('genero', ['Macho', 'Hembra'])->nullable();
             $table->enum('raza', ['Criollo', 'Comun'])->nullable(); // Aquí se quitó la coma extra
             $table->enum('estado', ['bueno', 'regular', 'malo'])->nullable();
+            $table->enum('tipo', ['Perros', 'Gatos', 'Conejos', 'Roedores', 'Animales exoticos', 'Animales de Granja'])->nullable();
             $table->string('rutafoto')->nullable();
             $table->timestamps();
         });

@@ -61,6 +61,18 @@
             </select>
         </div>
         <div class="form-group">
+            <label for="tipo" class="form-label">Tipo de animal</label>
+            <select name="tipo" class="form-control" required>
+                <option value="">Seleccione</option>
+                <option value="Perros">Perros</option>
+                <option value="Gatos">Gatos</option>
+                <option value="Conejos">Conejos</option>
+                <option value="Roedores">Roedores</option>
+                <option value="Animales exoticos">Animales exóticos</option>
+                <option value="Animales de Granja">Animales de Granja</option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="imagen" class="form-label">Imagen</label>
             <input type="file" id="imagen" name="rutafoto" class="form-control" required onchange="previewImage(event)">
         </div>

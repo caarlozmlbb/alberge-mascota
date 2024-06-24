@@ -19,6 +19,11 @@ class DonacionController extends Controller
         $usuarios = Usuarios::all();
         return view('donacion.create', compact('usuarios'));
     }
+    public function createadmin()
+    {
+        $usuarios = Usuarios::all();
+        return view('donacion.createadmin', compact('usuarios'));
+    }
 
 
     public function store(Request $request)
@@ -35,7 +40,7 @@ class DonacionController extends Controller
             'fecha' => $request->fecha,
         ]);
 
-        return redirect()->route('donaciones.index')->with('success', 'Donación agregada con éxito.');
+        return redirect()->route('dona')->with('success', 'Donación agregada con éxito.');
     }
 
     public function edit(Donacione $donacione)
