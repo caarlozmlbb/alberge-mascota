@@ -36,8 +36,8 @@
                         <td>{{ $mascota->edad }}</td>
                         <td>{{ $mascota->genero }}</td>
                         <td>{{ $mascota->raza }}</td>
-                        <td>{{ $mascota->tipo }}</td>
                         <td>{{ $mascota->estado }}</td>
+                        <td>{{ $mascota->tipo }}</td>
                         <td>
                             <!-- Mostrar la imagen -->
                             @if ($mascota->rutafoto)
