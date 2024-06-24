@@ -221,67 +221,26 @@
                             </div>
                         </div>
                         @endforeach
-
-                        <div class="imagen-port">
-                            <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                            <div class="hover-galeria">
-                                <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                                <p>Nuestro Trabajo</p>
-                            </div>
-                        </div>
-                        <div class="imagen-port">
-                            <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                            <div class="hover-galeria">
-                                <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                                <p>Nuestro Trabajo</p>
-                            </div>
-                        </div>
-                        <div class="imagen-port">
-                            <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                            <div class="hover-galeria">
-                                <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                                <p>Nuestro Trabajo</p>
-                            </div>
-                        </div>
-                        <div class="imagen-port">
-                            <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                            <div class="hover-galeria">
-                                <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                                <p>Nuestro Trabajo</p>
-                            </div>
-                        </div>
-                        <div class="imagen-port">
-                            <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                            <div class="hover-galeria">
-                                <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                                <p>Nuestro Trabajo</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
 
         </section>
         <section class="clientes contenedor">
-            <h2 class="titulo">Que dicen nuestros clientes</h2>
+            <h2 class="titulo">Nuestros Donandotes</h2>
             <div class="cards">
+                @foreach ($donantes as $donante)
                 <div class="card">
-                    <img src="{{ asset('images/perrito.jpg') }}" alt="">
+                    <img src="{{ asset('images/fotomascotas/' . $donante->usuario->imagen) }}" alt="">
                     <div class="contenido-text-card">
-                        <h4>Name</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, cumque.</p>
+                        <h2>Agredescamos a {{ $donante->usuario->nombre }}</h2>
+                        <p>"Su generosidad transforma vidas peludas: cada donación es una huella de esperanza en nuestro refugio."</p>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="{{ asset('images/perrito.jpg') }}" alt="">
-                    <div class="contenido-text-card">
-                        <h4>Name</h4>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, cumque.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <br>
-            <center><a href="" class="btn-adoptar">ADOPTAR</a></center>
+            {{-- <center><a href="" class="btn-adoptar">ADOPTAR</a></center> --}}
         </section>
     </main>
 

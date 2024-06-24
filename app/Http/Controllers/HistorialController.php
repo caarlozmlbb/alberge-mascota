@@ -8,11 +8,20 @@ use App\Models\Mascota;
 
 class HistorialController extends Controller
 {
-
-    public function index()
+    public function index(Request $request)
     {
-        $historiales = Historiale::all();
-        return view('historial_clinico.index', ['historiales'=>$historiales]);
+        $search = $request->input('search');
+
+        // Filtrar por nombre de mascota si se proporciona una búsqueda
+        $historiales = Historiale::with('mascota')
+            ->when($search, function ($query, $search) {
+                return $query->whereHas('mascota', function ($q) use ($search) {
+                    $q->where('nombre', 'LIKE', "%$search%");
+                });
+            })
+            ->paginate(10); // Paginación
+
+        return view('historial_clinico.index', ['historiales' => $historiales, 'search' => $search]);
     }
 
     public function create()
@@ -24,8 +33,8 @@ class HistorialController extends Controller
 
     public function store(Request $request)
     {
-         // Validar los datos
-         $request->validate([
+        // Validar los datos
+        $request->validate([
             'fecha_consulta' => 'required|date',
             'diagnostico' => 'required',
             'medicacion' => 'required',
@@ -38,7 +47,7 @@ class HistorialController extends Controller
 
     public function show(Historiale $historiale)
     {
-
+        //
     }
 
     public function edit(Historiale $historiale)
@@ -48,8 +57,8 @@ class HistorialController extends Controller
 
     public function update(Request $request, Historiale $historiale)
     {
-          // Validar los datos
-          $request->validate([
+        // Validar los datos
+        $request->validate([
             'fecha_consulta' => 'required|date',
             'diagnostico' => 'required',
             'medicacion' => 'required',

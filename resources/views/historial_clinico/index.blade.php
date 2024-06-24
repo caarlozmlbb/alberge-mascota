@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Tabla Mascotas')
+@section('title', 'Tabla Historial')
 
 @section('content_header')
-    {{-- <h1>Mascotas</h1> --}}
+    {{-- <h1>Historial</h1> --}}
 @stop
 
 @section('content')
@@ -12,6 +12,15 @@
             <h1>Tabla Historial</h1>
             <a href="{{ route('historiales.create') }}" class="btn btn-primary">Agregar Mascota</a>
         </div>
+
+        <!-- Formulario de búsqueda -->
+        <form action="{{ route('historiales.index') }}" method="GET" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Buscar por nombre" value="{{ request('search') }}">
+                <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+            </div>
+        </form>
+
         <div class="table-container">
             <table class="table table-striped table-hover table-bordered">
                 <thead>
@@ -25,7 +34,7 @@
                         <th>Estado</th>
                         <th>Peso</th>
                         <th>Hidratacion</th>
-                        <th>Temperatura</th><!-- Nueva columna para la imagen -->
+                        <th>Temperatura</th>
                         <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
@@ -57,6 +66,11 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Paginador -->
+        <div class="d-flex justify-content-center">
+            {{ $historiales->appends(['search' => request('search')])->links() }}
+        </div>
     </div>
 @stop
 
@@ -64,8 +78,9 @@
     <link rel="stylesheet" href="{{ asset('css/mascota/tabla.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 @stop
+
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="{{asset('js/alerts.js')}}"></script>
+    <script src="{{ asset('js/alerts.js') }}"></script>
 @stop

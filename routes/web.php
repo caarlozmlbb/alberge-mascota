@@ -12,6 +12,7 @@ use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\HistorialController;
 use App\Http\Controllers\HistoriaController;
 use App\Http\Controllers\SolicitudController;
+use App\Models\Donacione;
 use App\Models\Historial;
 use App\Models\Mascota;
 use App\Models\Usuarios;
@@ -128,9 +129,10 @@ Route::get('/registrar', function () {
 
 
 Route::get('/', function () {
+    $donantes = Donacione::all();
     $eventos =Evento::all();
     $mascotas = Mascota::all();
-    return view('index', ['mascotas' => $mascotas, 'eventos' => $eventos]);
+    return view('index', ['mascotas' => $mascotas, 'eventos' => $eventos, 'donantes' => $donantes]);
 })->name('index');
 Route::get('/dashboard', function () {
     return view('dashboard');
