@@ -28,6 +28,7 @@ class MascotaController extends Controller
             'genero' => 'required|string',
             'raza' => 'required|string',
             'estado' => 'required|string',
+            'tipo' => 'required|string',
             'rutafoto' => 'required|image|mimes:jpeg,png,jpg,gif', // |max:2048Validación de imagen
         ]);
 
@@ -46,6 +47,7 @@ class MascotaController extends Controller
             'genero' => $request->genero, // Asignar el género de la solicitud al campo 'genero' del modelo
             'raza' => $request->raza, // Asignar la raza de la solicitud al campo 'raza' del modelo
             'estado' => $request->estado, // Asignar el estado de la solicitud al campo 'estado' del modelo
+            'tipo' => $request->tipo,
             'rutafoto' => $imageName, // Asignar el nombre de la imagen al campo 'rutafoto' del modelo
         ]);
 

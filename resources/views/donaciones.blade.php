@@ -64,8 +64,32 @@
 
         <div class="content">
             <h2>Formulario de Donaciones</h2>
+            <style>
+                .custom-button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #007bff; /* Color de fondo azul */
+                    color: #fff; /* Color del texto blanco */
+                    text-decoration: none; /* Sin subrayado */
+                    border-radius: 5px; /* Bordes redondeados */
+                    transition: background-color 0.3s; /* Transición de color de fondo */
+                }
+
+                .custom-button:hover {
+                    background-color: #0056b3; /* Color de fondo azul oscuro al pasar el mouse */
+                }
+
+                .center {
+                    text-align: center; /* Centrar el contenido */
+                }
+            </style>
+           <div class="center">
+                <h2><a href="{{ route('donaciones.create') }}" class="custom-button">Agregar Donación</a></h2>
+                <p></br></p>
+            </div>
 
         </div>
+
     </section>
 
     {{-- <section>
