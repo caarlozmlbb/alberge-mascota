@@ -412,46 +412,7 @@
             </div>
         </div>
     </section>
-    <div class="carrusel">
-        <div class="carrusel-items">
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/gatos-y-perros.jpeg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-            <div class="carrusel-item">
-                <img src="{{ asset('images/fondo/miau.jpg') }}" alt="">
-            </div>
-        </div>
-
+    {{-- carrusel anterior --}}
     </div>
     <footer>
         <div class="contenedor-footer">
