@@ -23,6 +23,7 @@
                         <th>Descripción</th>
                         <th>Fecha</th>
                         <th>Tipo</th>
+                        <th>Imagen</th>
                         <th>Aprobado por</th>
                         <th colspan="2">Acciones</th>
                     </tr>
@@ -35,6 +36,14 @@
                             <td>{{ $evento->descripcion }}</td>
                             <td>{{ $evento->fecha }}</td>
                             <td>{{ $evento->tipo }}</td>
+                            <td>
+                                <!-- Mostrar la imagen -->
+                                @if ($evento->imagen)
+                                    <img src="{{ asset('images/event/' . $evento->imagen) }}" alt="{{ $evento->nombre }}" width="50">
+                                @else
+                                    No Image
+                                @endif
+                            </td>
                             <td>{{ $evento->usuario->name }}</td>
                             <td>
                                 <a href="{{ route('eventos.edit', $evento) }}" class="btn btn-warning">Actualizar</a>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->text('descripcion');
             $table->date('fecha');
             $table->enum('tipo',['adopcion','campaña'])->nullable();
+            $table->string('imagen')->nullable();
             $table->foreign('id_administrador')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

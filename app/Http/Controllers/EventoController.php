@@ -32,12 +32,19 @@ class EventoController extends Controller
             'id_administrador' => 'required'
         ]);
 
+        $imageName = null;
+        if ($request->hasFile('rutafoto')) {
+            $image = $request->file('rutafoto');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path('images/event'), $imageName);
+        }
         // Crear nuevo evento
         Evento::create([
             'nombre' => $request->nombre, // Asignar el nombre de la solicitud al campo 'nombre' del modelo
             'descripcion' => $request->descripcion, // Asignar la descripcion de la solicitud al campo 'descripcion' del modelo
             'fecha' => $request->fecha, // Asignar la fecha de la solicitud al campo 'fecha' del modelo
             'tipo' => $request->tipo, // Asignar el tipo de la solicitud al campo 'tipo' del modelo
+            'imagen' => $imageName,
             'id_administrador' => $request->id_administrador,
         ]);
 

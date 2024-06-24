@@ -13,6 +13,12 @@
         <h5 class="text-center">Hola, {{ Auth::user()->name }}</h5>
         <form id="eventoForm" action="{{ route('eventos.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="preview-container">
+                <div class="preview-box" id="preview-box">
+                    <img id="preview" src="" alt="Previsualización de la imagen" style="display: none;">
+                    <span>Imagen</span>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" id="nombre" name="nombre" class="form-control" required>
@@ -36,7 +42,10 @@
                     <option value="campaña">Campaña de Concientización</option>
                 </select>
             </div>
-
+            <div class="form-group">
+                <label for="imagen" class="form-label">Imagen</label>
+                <input type="file" id="imagen" name="rutafoto" class="form-control" required onchange="previewImage(event)">
+            </div>
             <input type="hidden" name="id_administrador" value="{{ Auth::id() }}">
 
             <div class="form-actions">
@@ -56,3 +65,15 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{asset('js/alerts.js')}}"></script>
 @stop
+<script>
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var preview = document.getElementById('preview');
+            preview.src = reader.result;
+            preview.style.display = 'block';
+            document.querySelector('.preview-box span').style.display = 'none';
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
