@@ -316,7 +316,7 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'pages',
+            'text' => 'pagese',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
@@ -349,8 +349,13 @@ return [
             'icon' => 'fas fa-fw fa-users'
         ],
         [
+            'text' => 'Historias',
+            'route' => 'historias.index',
+            'icon' => 'fas fa-fw fa-book',
+        ],
+        [
             'text' => 'Donaciones',
-            'route' => 'donaciones',
+            'route' => 'donaciones.index',
             'icon' => 'fas fa-donate',
         ],
         // [
@@ -361,13 +366,16 @@ return [
         [
             'text' => 'Solicitud Adopciones',
             'route' => 'solicitudes.index',
-            'icon' => 'fas fa-donate',
+            'icon' => 'fas fa-fw fa-file-signature',
+            'label' => 4,
+            'label_color' => 'success',
         ],
         [
             'text' => 'change_password',
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
         [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',

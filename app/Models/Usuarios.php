@@ -20,4 +20,14 @@ class Usuarios extends Model
     {
         return $this->hasMany(Solicitude::class); //id_del usuario
     }
+
+    public function historia()
+    {
+        return $this->hasMany(Historia::class); //id_del usuario
+    }
+
+    public function donacion()
+    {
+        return $this->hasMany(Donacione::class); //id_del usuario
+    }
 }

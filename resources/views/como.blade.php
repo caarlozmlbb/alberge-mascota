@@ -1,5 +1,4 @@
-@extends('layouts.base')
-@section('contenido')
+
 
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
@@ -17,7 +16,7 @@
 
         <section class="contact">
             <div class="content">
-                <h2>PASOS PARA ADOPTAR</h2>    
+                <h2>PASOS PARA ADOPTAR</h2>
             </div>
 
             <div class="container">
@@ -48,7 +47,7 @@
                 <div class="image">
                     <img src="{{ asset('images/card/formularios.jpg') }}" alt="" width="500">
                 </div>
-                
+
             </div>
 
             <div class="content">
@@ -58,11 +57,10 @@
             </div> <br>
 
         </section>
-        
+
 
         <footer>
             @include('footer')
         </footer>
     </body>
-@endsection
 

@@ -26,37 +26,37 @@ class UsuariosController extends Controller
 
 
     public function store(Request $request)
-    {
-        // Define validation rules
-        $request->validate([
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'email' => 'required|email',
-            'contrasena' => 'required',
-            'tipo' => 'required',
-        ]);
+{
+    $request->validate([
+        'nombre' => 'required',
+        'apellido' => 'required',
+        'email' => 'required|email',
+        'contrasena' => 'required',
+        'tipo' => 'required',
+    ]);
 
-        // Manejar la carga de la imagen
-        $imageName = null; // Inicializar la variable $imageName como null
-        if ($request->hasFile('rutafoto')) { // Verificar si se ha cargado un archivo de imagen
-            $image = $request->file('rutafoto'); // Obtener el archivo de imagen cargado
-            $imageName = time().'.'.$image->getClientOriginalExtension(); // Generar un nombre único para la imagen usando el tiempo actual y la extensión del archivo
-            $image->move(public_path('images/fotomascotas'), $imageName); // Mover la imagen a la carpeta 'public/images' con el nombre generado
-        }
-        // Create new user
-        $usuario = Usuarios::create([
-            'nombre' => $request->nombre,
-            'apellido' => $request->apellido,
-            'email' => $request->email,
-            'contrasena' =>bcrypt($request->contrasena), // Hash the password before saving
-            'tipo' => $request->tipo,
-            'n_telefono' => $request->n_telefono,
-            'direccion' => $request->direccion,
-            'imagen' => $imageName
-        ]);
-
-        return redirect()->route('perfil', ['id' => $usuario->id]);
+    $imageName = null;
+    if ($request->hasFile('rutafoto')) {
+        $image = $request->file('rutafoto');
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $image->move(public_path('images/fotomascotas'), $imageName);
     }
+
+    $usuario = Usuarios::create([
+        'nombre' => $request->nombre,
+        'apellido' => $request->apellido,
+        'email' => $request->email,
+        'contrasena' => bcrypt($request->contrasena),
+        'tipo' => $request->tipo,
+        'n_telefono' => $request->n_telefono,
+        'direccion' => $request->direccion,
+        'imagen' => $imageName,
+    ]);
+
+    session(['usuario_id' => $usuario->id]);
+
+    return redirect()->route('index');
+}
 
 
     public function show(Usuarios $usuarios)

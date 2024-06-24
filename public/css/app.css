@@ -525,24 +525,38 @@ footer{
     }
 }
 
-.galeria-mascotas{
-    margin: 10px 20px;
-    box-shadow: 0 4px 8px 0 lightskyblue, 0 6px 20px rgba(0, 0, 0, 0.19);
-    float: left;
-    width: 350px;
+/* Estilo para el contenedor principal utilizando CSS Grid */
+/* Estilo para el contenedor principal */
+.contenedor-galeria {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 20px; /* Espaciado entre los elementos */
 }
 
-.galeria-mascotas img{
+/* Estilo para cada galería de mascotas */
+.galeria-mascotas {
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 lightskyblue, 0 6px 20px rgba(0, 0, 0, 0.19);
+    width: 350px;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y el alto del elemento */
+    text-align: center; /* Centra el texto dentro de cada tarjeta */
+}
+
+/* Estilo para las imágenes dentro de cada galería de mascotas */
+.galeria-mascotas img {
     width: 100%;
     height: auto;
 }
 
-.galeria-mascotas:hover{
+/* Efecto hover para la galería de mascotas */
+.galeria-mascotas:hover {
     border: 1px solid lightcoral;
     transform: rotate(-3deg);
 }
 
-.pie{
+/* Estilo para el pie de cada galería de mascotas */
+.pie {
     text-align: center;
     text-shadow: 2px 2px 5px rgb(0, 75, 113);
 }

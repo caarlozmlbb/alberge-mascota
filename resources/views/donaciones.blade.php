@@ -1,5 +1,4 @@
-@extends('layouts.base')
-@section('contenido')
+
 <header>
         @include('cabecera')
         <section class="textos-header">
@@ -65,7 +64,7 @@
 
         <div class="content">
             <h2>Formulario de Donaciones</h2>
-            
+
         </div>
     </section>
 
@@ -86,4 +85,4 @@
 <footer>
     @include('footer')
 </footer>
-@endsection
+

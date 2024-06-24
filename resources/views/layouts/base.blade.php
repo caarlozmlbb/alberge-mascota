@@ -19,54 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="{{ asset('images/logo-alberge.png') }}" alt="Logo">
-            </div>
-            <div class="nav-links">
-                <a href="{{ route('index') }}">Inicio</a>
-                <a href="{{ route('como') }}">¿Como Adoptar?</a>
-                <a href="{{ route('adopciones') }}">Adopciones</a>
-                <a href="{{ route('donaciones') }}">Donaciones</a>
-                <a href="{{ route('blog') }}">Blog</a>
-                <a href="{{ route('contacto') }}">Contacto</a>
-
-                @if ($usuario != null)
-                    <a href="#">{{ $usuario->nombre }}</a>
-                    <a href=""><img src="{{ asset('images/fotomascotas/' . $usuario->imagen) }}" class="profile-image"></a>
-                @else
-                    <a href="{{ route('usuarioformulario') }}" class="button-link">Registrate Gratis</a>
-                @endif
-
-                @if (Route::has('login'))
-                    @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Log in</a>
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="button-link">Registro admin</a>
-                        @endif
-                    @endauth
-                @endif
-            </div>
-        </nav>
-        <section class="textos-header">
-            <h1 id="header-text"></h1>
-            <h2 id="header-text-2">Nombre del alberge | otros</h2>
-            <a href="{{ route('login') }}" class="btn btn-4">ACCEDER
-                <i class="fa-solid fa-paw"></i>
-            </a>
-        </section>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
-                <path d="M0.00,49.85 C150.00,149.60 349.20,-49.85 500.00,49.85 L500.00,149.60 L0.00,149.60 Z"
-                    style="stroke: none; fill: #f2f2f2;"></path>
-            </svg></div>
-    </header>
     @yield('contenido')
-
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/movimientoletra.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

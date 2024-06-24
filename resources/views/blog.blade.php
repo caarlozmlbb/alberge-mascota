@@ -1,7 +1,9 @@
-@extends('layouts.base')
-@section('contenido')
+
 <header>
         @include('cabecera')
+        <section class="textos-header">
+            <h1 id="header-text-2">Blog</h1>
+        </section>
 </header>
 <main>
     <p>Blog
@@ -11,4 +13,4 @@
 <footer>
     @include('footer')
 </footer>
-@endsection
+
