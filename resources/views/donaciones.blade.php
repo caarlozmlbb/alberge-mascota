@@ -2,7 +2,7 @@
 <header>
         @include('cabecera')
         <section class="textos-header">
-            <h1 id="header-text-2">DONAR</h1>
+            <h1 id="header-text-2" style="font-size:50px;">DONAR</h1>
         </section>
         <link rel="stylesheet" href="{{ asset('css/donaciones.css') }}">
 </header>
@@ -64,8 +64,32 @@
 
         <div class="content">
             <h2>Formulario de Donaciones</h2>
+            <style>
+                .custom-button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #007bff; /* Color de fondo azul */
+                    color: #fff; /* Color del texto blanco */
+                    text-decoration: none; /* Sin subrayado */
+                    border-radius: 5px; /* Bordes redondeados */
+                    transition: background-color 0.3s; /* Transición de color de fondo */
+                }
+
+                .custom-button:hover {
+                    background-color: #0056b3; /* Color de fondo azul oscuro al pasar el mouse */
+                }
+
+                .center {
+                    text-align: center; /* Centrar el contenido */
+                }
+            </style>
+           <div class="center">
+                <h2><a href="{{ route('donaciones.create') }}" class="custom-button">Agregar Donación</a></h2>
+                <p></br></p>
+            </div>
 
         </div>
+
     </section>
 
     {{-- <section>

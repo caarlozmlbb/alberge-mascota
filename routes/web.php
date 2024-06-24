@@ -17,6 +17,8 @@ use App\Models\Mascota;
 use App\Models\Usuarios;
 use App\Models\Solicitud;
 use App\Models\Evento;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +43,18 @@ Route::get('/dona', function () {
     return view('donaciones');
 })->name('dona');
 
-Route::get('/blog', function () {
-    return view('blog');
-})->name('blog');
+Route::get('/historia', function () {
+    return view('historias');
+})->name('historia');
 
 Route::get('/usuarioformulario', function () {
     return view('usuario.register');
 })->name('usuarioformulario');
+
+//ruta del donador
+Route::get('/donadorform', function () {
+    return view('donacion.donador');
+})->name('donadorform');
 
 Route::get('/contacto', function () {
     return view('contacto');
@@ -77,7 +84,6 @@ Route::post('/adoptar', function (Illuminate\Http\Request $request) {
     ]);
 });
 
-
 Route::get('/perfil/{id}', function ($id) {
     session(['usuario_id' => $id]);
     return redirect()->route('index');
@@ -87,11 +93,44 @@ Route::get('/registrar', function () {
     return view('auth.register');
 })->name('registrar');
 
+Route::post('/ingresousuario', function (Request $request) {
+    $email = $request->input('email');
+    $password = $request->input('password');
+
+    $usuario = Usuarios::where('email', $email)->first();
+    if ($usuario) {
+        if (($password === $usuario->contrasena)) {
+            session(['usuario_id' => $usuario->id]);
+
+            return redirect()->route('index')->with('success', 'Inicio de sesión exitoso.');
+        } else {
+            return redirect()->back()->with('error', 'Credenciales incorrectas. Inténtalo de nuevo.');
+        }
+    } else {
+        return redirect()->back()->with('error', 'Usuario no encontrado. Inténtalo de nuevo.');
+    }
+})->name('ingresousuario');
+
+
+Route::get('/editaperfil', function () {
+    return view('editarperfil');
+})->name('editarperfil');
+
+Route::get('/logine', function () {
+    return view('logine');
+})->name('logine');
+
+
+Route::get('/registrar', function () {
+    return view('auth.register');
+})->name('registrar');
+
 
 
 Route::get('/', function () {
+    $eventos =Evento::all();
     $mascotas = Mascota::all();
-    return view('index', ['mascotas' => $mascotas]);
+    return view('index', ['mascotas' => $mascotas, 'eventos' => $eventos]);
 })->name('index');
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -113,14 +152,6 @@ Route::resource('historiales', HistorialController::class);
 Route::resource('solicitudes', SolicitudController::class);
 Route::resource('historias', HistoriaController::class);
 Route::resource('donaciones', DonacionController::class);
-
-//rutas para realizar un registro del usuario
-// Route::get('register', [RegisterController::class, 'index'])->name('register');
-// Route::post('register', [RegisterController::class, 'store']);
-// //rutas para el login del usuario
-// Route::get('logine', [LoginController::class, 'index'])->name('logine');
-// Route::post('logine', [LoginController::class, 'store']);
-
 
 Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');
 Route::get('/delete-image/{imageName}',[ImageController::class, 'deleteImage'])->name('delete.image');

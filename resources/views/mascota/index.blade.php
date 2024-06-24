@@ -23,6 +23,7 @@
                     <th>Género</th>
                     <th>Raza</th>
                     <th>Estado</th>
+                    <th>Tipo</th>
                     <th>Imagen</th> <!-- Nueva columna para la imagen -->
                     <th colspan="2">Acciones</th>
                 </tr>
@@ -36,6 +37,7 @@
                         <td>{{ $mascota->genero }}</td>
                         <td>{{ $mascota->raza }}</td>
                         <td>{{ $mascota->estado }}</td>
+                        <td>{{ $mascota->tipo }}</td>
                         <td>
                             <!-- Mostrar la imagen -->
                             @if ($mascota->rutafoto)

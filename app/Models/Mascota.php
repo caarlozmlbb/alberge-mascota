@@ -10,7 +10,7 @@ class Mascota extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nombre', 'edad', 'genero', 'raza', 'estado', 'rutafoto',
+        'nombre', 'edad', 'genero', 'raza', 'estado', 'tipo', 'rutafoto',
     ];
 
     public function historial()

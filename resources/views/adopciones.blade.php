@@ -9,7 +9,7 @@
     <header>
         @include('cabecera')
         <section class="textos-header">
-            <h1 id="header-text-2">ADOPCIONES</h1>
+            <h1 id="header-text-2" style="font-size:50px;">ADOPCIONES</h1>
         </section>
     </header>
 
@@ -26,7 +26,7 @@
                         @csrf
                         <input type="hidden" name="id_mascota" value="{{ $mascota->id }}">
                         <input type="hidden" name="id_usuario" value="{{ $usuario->id ?? 0}}">
-                        <button type="submit" class="adoptar-btn" data-mascota-id="{{ $mascota->id }}">Adoptar</button>
+                        <button type="submit" class="btn-descripcion" data-mascota-id="{{ $mascota->id }}">Adoptar</button>
                     </form>
                 </div>
             </div>
@@ -38,7 +38,7 @@
         // Espera a que el documento esté completamente cargado
         document.addEventListener('DOMContentLoaded', function () {
             // Agrega un evento de clic a todos los botones de clase .adoptar-btn
-            const buttons = document.querySelectorAll('.adoptar-btn');
+            const buttons = document.querySelectorAll('.btn-descripcion');
             buttons.forEach(button => {
                 button.addEventListener('click', function (event) {
                     // Previene el comportamiento predeterminado del formulario

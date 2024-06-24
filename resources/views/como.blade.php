@@ -10,7 +10,7 @@
         <header>
             @include('cabecera')
             <section class="textos-header">
-                <h1 id="header-text-2">¿Como Adoptar?</h1>
+                <h1 id="header-text-2" style="font-size:50px;">¿Como Adoptar?</h1>
             </section>
         </header>
 

@@ -8,6 +8,15 @@
             <header><img src="{{ asset('images/card/paw.png') }}" alt=""></header>
             <p>Confirmación de Adopción</p>
         </div>
+<header>
+    @include('cabecera')
+    <section class="textos-header">
+        <h1 id="header-text-2" style="font-size:50px;">{{ $usuario->nombre }} Adoptar es un grato acto de amor que transforma dos vidas a la vez.</h1>
+    </section>
+</header>
+<p></p>
+<center><h1>Confirmación de Adopción</h1></center>
+
 
         @if (isset($mascotaSeleccionada))
             <h1>{{ $mascotaSeleccionada->nombre }}</h1>
@@ -35,3 +44,8 @@
     <a href="{{ route('adopciones') }}" class="back-button">Volver</a>
 </div>
 </body>
+
+<footer>
+    @include('footer')
+</footer>
+
